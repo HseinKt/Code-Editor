@@ -27,7 +27,7 @@ const register = ()=>{
             </div>
             <div className="input-wrapper">
               <label htmlFor="last_name">Last Name</label>
-              <input type="text" id="last_name" placeholder="Last Name" />
+              <input className="x" type="text" id="last_name" placeholder="Last Name" />
             </div>
           </div>
           <div>
