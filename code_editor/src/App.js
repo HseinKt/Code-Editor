@@ -5,7 +5,7 @@ function App() {
     <>
       <Routes>
         {/* <Route path="/" element = {}/> */}
-        <Route path="/" element={<CodingPage />} />
+        <Route path="/coding" element={<CodingPage />} />
       </Routes>
     </>
   );
