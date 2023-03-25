@@ -50,7 +50,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: baseline;
-    padding: 10px 20px;
+    padding: 10px 0px;
 }
 
 .my-files h4 {
@@ -59,7 +59,10 @@
 }
 
 .my-files p {
-
+    margin: 5px 0;
+    width: 100%;
+    background: var(--cyan);
+    padding: 5px 15px;
 }
 
 @media (max-width:800px) {
