@@ -1,4 +1,4 @@
-import Header from "../components/header"
+import Header from "../components/landing_page/header"
 
 const landingPage = () => {
   return (
