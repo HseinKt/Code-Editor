@@ -18,3 +18,29 @@
     background-repeat: no-repeat;
     background-size: 50px 50px; /* adjust the size of the icon */
 }
+
+
+/* Cards */
+.card_container {
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    width: fit-content;
+}
+
+.card_container:hover {
+    box-shadow: 0 9px 16px 0 rgba(0,0,0,0.2);
+}
+
+.card_image {
+    height: 300px;
+    width: 300px;
+    margin: 7%;
+    background-image: url('../images/card.jpg');
+    background-position: 10px 12px;
+    background-position: left ;
+    background-repeat: no-repeat;
+    background-size: 270px 300px;
+}
+
+.details {
+    padding: 2px 16px;
+}

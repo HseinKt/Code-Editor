@@ -1,8 +1,25 @@
+.code {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    height: 100%;
+}
+
+.console {
+    width: 40%;
+    background: var(--light_blue);
+}
+
+.console label {
+    color: var(--dark_blue)
+    
+}
 .coding_header {
     display:  flex;
     align-items: center;
     justify-content: end;
     width: 100%;
+    background: var(--dark_blue);
 }
 
 .coding_header > ul {
@@ -11,9 +28,50 @@
 }
 
 .coding_header li {
-    margin: 0 2rem;
+    margin: 0 1rem;
 }
 
 .coding_button {
-    padding: 20px 30px;
+    padding: 5px 10px;
+    background: var(--cyan);
+    border: 1px solid var(--cyan);
+    border-radius: 10px;
+
+}
+
+.coding_button:hover {
+    background: var(--light_blue);
+    border: 2px solid var(--cyan);
+    transition: 100ms;
+}
+
+.my-files {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: baseline;
+    padding: 10px 20px;
+}
+
+.my-files h4 {
+    font-size: 1.3rem;
+    font-weight: 500;
+}
+
+.my-files p {
+
+}
+
+@media (max-width:800px) {
+    .code {
+        flex-direction: column;
+    }
+    .console {
+        height: 10rem;
+        width: 100%;
+    }
+    .myfiles {
+        height: 10rem;
+        width: 100%;
+    }
 }

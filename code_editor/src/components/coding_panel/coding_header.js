@@ -1,14 +1,17 @@
 import CodeButton from "./code_button";
-
-const CodingHeader = () => {
+import "./coding_header.css"
+const CodingHeader = (props) => {
     return (
         <div className="coding_header">
             <ul>
                 <li>
-                    <CodeButton>save</CodeButton>
+                    <CodeButton onClick = {props.onSave}>save</CodeButton>
                 </li>
                 <li>
-                    <CodeButton>Run</CodeButton>
+                    <CodeButton onClick = {props.onshowfiles}>My Files</CodeButton>
+                </li>
+                <li>
+                    <CodeButton onClick = {props.onRun}>Run</CodeButton>
                 </li>
             </ul>
         </div>

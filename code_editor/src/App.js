@@ -8,7 +8,6 @@ function App() {
   return (
     <>
       <Routes>
-        {/* <Route path="/" element = {}/> */}
         <Route path="/coding_page" element={<CodingPage />} />
 
         <Route path="/search_page" element={<SearchingPage />} />
