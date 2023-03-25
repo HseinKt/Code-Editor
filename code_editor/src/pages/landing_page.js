@@ -1,8 +1,12 @@
 import Header from "../components/landing_page/header"
+import Footer from "../components/landing_page/footer"
 
 const landingPage = () => {
   return (
-    <Header />
+    <div>
+      <Header/>
+      <Footer/>
+    </div>
   )
 }
 

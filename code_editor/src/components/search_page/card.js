@@ -1,4 +1,4 @@
-const SearchPage = () => {
+const Card = () => {
     return ( 
         <div>
             
@@ -6,4 +6,4 @@ const SearchPage = () => {
      );
 }
  
-export default SearchPage;
+export default Card;

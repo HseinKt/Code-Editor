@@ -1,10 +1,14 @@
-const SearchingPage = () => {
-    return ( 
-        <div>
-            <h1>Search page </h1>
-        </div>
-     );
-}
- 
-export default SearchingPage;
+ import SearchBar from "../components/search_page/search_bar"
+ import Card from "../components/search_page/card"
 
+const SearchingPage = () => {
+  return (
+    <div>
+        <SearchBar />
+        <Card />
+    </div>
+    
+  )
+}
+
+export default SearchingPage
