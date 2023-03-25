@@ -1,5 +1,5 @@
 import { Routes, Route } from "react-router-dom";
-import CodingPage from "./pages/coding-page";
+import CodingPage from "./pages/coding_page";
 function App() {
   return (
     <>
