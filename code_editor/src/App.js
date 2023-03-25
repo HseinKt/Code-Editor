@@ -10,6 +10,7 @@ function App() {
         <Route path="/coding_page" element={<CodingPage />} />
         <Route path="/" element={<landingPage />} />
 
+        <Route path="/coding" element={<CodingPage />} />
       </Routes>
     </>
   );
