@@ -28,6 +28,38 @@ code {
   display: flex;
   align-items: center;
 }
+.header>div>button{
+  padding: 5px;
+  margin: 2px;
+  border: 1px solid black;
+  transition: 0.3s;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.login{
+  color: var(--light_blue);
+  background-color: var(--cyan);
+}
+.register{
+  color: black;
+  background-color: var(--light_blue);
+} 
+.login:hover{
+  color: black;
+  background-color: var(--light_blue);
+}
+.register:hover{
+  color: var(--light_blue);
+  background-color: var(--cyan);
+}
+.login:active {
+  padding: 4px;
+}
+.register:active {
+  padding: 4px;
+}
+
 .footer{
   display: flex;
   flex-direction: column;
