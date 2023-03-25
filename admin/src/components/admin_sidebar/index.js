@@ -5,9 +5,6 @@ const AdminSidebar = () => {
       <div class="users-btn" id="users-btn">
         Users
       </div>
-      <div class="products-btn" id="products-btn">
-        Products
-      </div>
     </div>
   );
 };
