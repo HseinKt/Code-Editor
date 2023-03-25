@@ -1,0 +1,19 @@
+.coding_header {
+    display:  flex;
+    align-items: center;
+    justify-content: end;
+    width: 100%;
+}
+
+.coding_header > ul {
+    display: flex;
+    list-style: none;
+}
+
+.coding_header li {
+    margin: 0 2rem;
+}
+
+.coding_button {
+    padding: 20px 30px;
+}
