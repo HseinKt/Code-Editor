@@ -8,7 +8,14 @@ const SearchingPage = () => {
     <div>
         <Header/>
         <SearchBar />
-        <Card />
+        <div className="cards">
+            <Card />
+            <Card />
+            <Card />
+            <Card />
+            <Card />
+            <Card />
+        </div>
         <Footer/>
 
     </div>

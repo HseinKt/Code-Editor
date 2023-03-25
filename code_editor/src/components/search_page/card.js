@@ -2,16 +2,18 @@ import React, {useState} from 'react'
 import "./search.css";
 
 const Card = () => {
+
+    const [name, setName] = useState("Hsein kteish");
+    const [major, setMajor] = useState("Engineer");
+
     return ( 
-        <div>
+        <div className='container'>
             <div className="card_container">
-                {/* <img src="../images/card.jpg" alt="card" /> */}
                 <div className="card_image"></div>
                 <div className='details'>
-                    <h4 className="name"><b>Name name</b></h4>
-                    <p className="major">Major</p>
+                    <h4 className="name"><b>{name}</b></h4>
+                    <p className="major">{major}</p>
                 </div>
-                
             </div>
         </div>
      );

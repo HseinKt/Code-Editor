@@ -1,3 +1,11 @@
+body {
+    margin: 0;
+    font-family: sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+}
+
 .searchBar {
     display:  flex;
     align-items: center;
@@ -21,9 +29,19 @@
 
 
 /* Cards */
+.cards {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    padding: 1%;
+}
+
 .card_container {
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-    width: fit-content;
+    width: auto;
+    margin: 2%;
+    background-color: #D9D9D9;
 }
 
 .card_container:hover {
@@ -33,10 +51,8 @@
 .card_image {
     height: 300px;
     width: 300px;
-    margin: 7%;
     background-image: url('../images/card.jpg');
-    background-position: 10px 12px;
-    background-position: left ;
+    background-position: center ;
     background-repeat: no-repeat;
     background-size: 270px 300px;
 }
@@ -44,3 +60,4 @@
 .details {
     padding: 2px 16px;
 }
+
