@@ -3,6 +3,7 @@ import { Routes, Route } from "react-router-dom";
 import CodingPage from "./pages/coding_page";
 import LandingPage from "./pages/landing_page";
 import SearchingPage from "./pages/search_page";
+import Register from "./pages/register_page";
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
 
         <Route path="/search_page" element={<SearchingPage />} />
         <Route path="/" element={<LandingPage />} />
+        <Route path="/register" element={<Register/>} />
       </Routes>
     </>
   );
