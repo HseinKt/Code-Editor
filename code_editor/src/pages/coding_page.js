@@ -6,6 +6,7 @@ import "ace-builds/src-noconflict/theme-monokai";
 import "ace-builds/src-noconflict/theme-tomorrow_night_blue";
 import { useState } from "react";
 import CodingHeader from "../components/coding_panel/coding_header";
+import MyFiles from "../components/coding_panel/my_files";
 const CodingPage = () => {
   const [showFiles, setShowFiles] = useState(true);
   const [code, setCode] = useState('');
@@ -50,9 +51,7 @@ const CodingPage = () => {
           }}
         />
         <div className="console">
-          {showFiles ? <div>
-            alionj
-          </div> :  <div>
+          {showFiles ? <MyFiles/> :  <div>
           <label>
             {" "}
             {`->`}output :<br />

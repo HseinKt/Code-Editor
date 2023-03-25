@@ -45,11 +45,32 @@
     transition: 100ms;
 }
 
+.my-files {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: baseline;
+    padding: 10px 20px;
+}
+
+.my-files h4 {
+    font-size: 1.3rem;
+    font-weight: 500;
+}
+
+.my-files p {
+
+}
+
 @media (max-width:800px) {
     .code {
         flex-direction: column;
     }
     .console {
+        height: 10rem;
+        width: 100%;
+    }
+    .myfiles {
         height: 10rem;
         width: 100%;
     }
