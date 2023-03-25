@@ -2,12 +2,13 @@
     width: 100%;
     display: flex;
     justify-content: center;
-    height: 100%;
+    height: 100vh;
 }
 
 .console {
     width: 40%;
     background: var(--light_blue);
+    height: 100%;
 }
 
 .console label {
@@ -46,23 +47,61 @@
 }
 
 .my-files {
+    
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: start;
     align-items: baseline;
     padding: 10px 0px;
+    background: var(--cyan);
+    height: 100%;
+    color: var(--dark_blue);
+    animation: show;
+    animation-duration: 400ms;
+    height: 100%;
+    
+}
+
+.save_input {
+    background: var(--light_blue);
+    border-radius: 10px;
+    color: var(--dark_blue);
+    border: none;
+    margin-right: 10px;
 }
 
 .my-files h4 {
     font-size: 1.3rem;
     font-weight: 500;
+   
 }
 
 .my-files p {
     margin: 5px 0;
     width: 100%;
-    background: var(--cyan);
     padding: 5px 15px;
+}
+.my-files p:hover {
+    background: var(--light_blue);
+}
+
+@keyframes show{
+    0% {
+        width: 0%;
+    }
+    /* 25% {
+        width: 25%;
+    }
+    50% {
+        width: 50%;
+    }
+    75% {
+        width: 75%;
+    } */
+    100% {
+        width: 100%;
+    }
+    
 }
 
 @media (max-width:800px) {
@@ -70,11 +109,11 @@
         flex-direction: column;
     }
     .console {
-        height: 10rem;
+        height: 100%;
         width: 100%;
     }
     .myfiles {
-        height: 10rem;
         width: 100%;
+        height: 100%;
     }
 }

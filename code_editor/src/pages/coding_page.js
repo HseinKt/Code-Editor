@@ -10,34 +10,47 @@ import MyFiles from "../components/coding_panel/my_files";
 const CodingPage = () => {
   const [showFiles, setShowFiles] = useState(true);
   const [code, setCode] = useState('');
+  const [isSaving,setIsSaving] = useState(false);
   const toggleShowMyFiles = () => {
     console.log(showFiles);
     setShowFiles(!showFiles);
   };
 
   const saveHandler = () => {
-    console.log("save");
+    setIsSaving(!isSaving);
+    console.log(isSaving);
   };
   const runHandler = () => {
     console.log("run");
+  };
+  const savingclassNameHandler = () => {
+    console.log("savingclassNameHandler");
+    setIsSaving(false)
   };
   const codeHandler = (value) => {
     setCode(value)
     console.log(value);
   }
 
+  const fileNameChangleHandler = (e) => {
+    console.log(e.target.value);
+  }
   return (
     <>
       <CodingHeader
         onSave={saveHandler}
         onshowfiles={toggleShowMyFiles}
         onRun={runHandler}
+        onSaveClassName = {savingclassNameHandler}
+        isSaving = {isSaving}
+        onChange = {fileNameChangleHandler}
       />
       <div className="code">
         <AceEditor
           placeholder="Start Coding... "
           mode="python"
           width="100%"
+          height="100%"
           theme="tomorrow_night_blue"
           fontSize={20}
           showPrintMargin={true}

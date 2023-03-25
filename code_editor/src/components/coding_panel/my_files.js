@@ -1,14 +1,16 @@
+import FileName from "./file_name"
+
 const MyFiles = () => {
     return(
         <div className="my-files">
             <h4>
-                my files
+                My files
             </h4>
             <hr></hr>
-            <p>hellp.py</p>
-            <p>hellp.py</p>
-            <p>hellp.py</p>
-            <p>hellp.py</p>
+            <FileName name = {'start'} />
+            <FileName name = {'start'} />
+            <FileName name = {'start'} />
+            <FileName name = {'start'} />
         </div>
     )
 }
