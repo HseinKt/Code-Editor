@@ -1,6 +1,6 @@
 import { Routes, Route } from "react-router-dom";
 import CodingPage from "./pages/coding-page";
-import landingPage from "./pages/landing_page";
+import LandingPage from "./pages/landing_page";
 
 function App() {
   return (
@@ -8,9 +8,9 @@ function App() {
       <Routes>
         {/* <Route path="/" element = {}/> */}
         <Route path="/coding_page" element={<CodingPage />} />
-        <Route path="/" element={<landingPage />} />
+        <Route path="/" element={<LandingPage />} />
 
-        <Route path="/coding" element={<CodingPage />} />
+        <Route path="/coding" element={<LandingPage />} />
       </Routes>
     </>
   );
