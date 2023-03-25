@@ -26,7 +26,7 @@ body {
 }
 
 .navbar {
-  background-color: #bface2;
+  background-color: #06283d;
   display: flex;
   width: 100%;
   height: 10vh;
@@ -34,7 +34,7 @@ body {
 
 .side-panel {
   display: inline-block;
-  background-color: #655dbb;
+  background-color: #1363df;
   width: 15%;
   height: 230vh;
 }
@@ -44,6 +44,7 @@ body {
   margin-left: 17vw;
   margin-top: 2vh;
   font-size: 42px;
+  color: #47b5ff;
 }
 
 .logout {
@@ -54,9 +55,10 @@ body {
 }
 
 .side-title {
-  margin-left: 2vw;
+  margin-left: 4vw;
   padding-top: 10vh;
   font-size: 2vw;
+  color: #06283d;
 }
 
 .users-btn {
@@ -64,11 +66,13 @@ body {
   margin-top: 15vh;
   padding-left: 5vw;
   font-size: 1.5vw;
+  color: #06283d;
 }
 
 .users-btn:hover,
 .products-btn:hover {
-  background-color: #bface2;
+  background-color: #06283d;
+  color: #47b5ff;
 }
 .products-btn {
   padding: 5%;
@@ -97,7 +101,7 @@ td {
   vertical-align: middle;
 }
 tr:hover {
-  background-color: #655dbb;
+  background-color: #1363df;
 }
 
 .content {
