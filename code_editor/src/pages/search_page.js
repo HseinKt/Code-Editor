@@ -1,8 +1,13 @@
  import SearchBar from "../components/search_page/search_bar"
+ import Card from "../components/search_page/card"
 
 const SearchingPage = () => {
   return (
-    <SearchBar />
+    <div>
+        <SearchBar />
+        <Card />
+    </div>
+    
   )
 }
 
