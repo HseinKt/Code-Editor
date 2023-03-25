@@ -13,7 +13,6 @@ function App() {
 
         <Route path="/search" element={<SearchingPage />} />
         <Route path="/" element={<LandingPage />} />
-
       </Routes>
     </>
   );
