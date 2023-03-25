@@ -4,11 +4,11 @@
  import Footer from "../components/landing_page/footer"
  import React, {useState} from 'react'
 
- 
+
 const SearchingPage = () => {
     const [name, setName] = useState("Hsein kteish");
     const [major, setMajor] = useState("Engineer");
-    
+        
     return (
         <div>
             <Header/>
