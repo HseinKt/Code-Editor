@@ -1,13 +1,11 @@
 const header =()=>{
   return(
     <header className="header">
+      <h3>Logo</h3>
+      <h1>Editor Name</h1>
       <div>
-        <div><h3>Logo Goes here</h3></div>
-        <div><h1>Editor Name</h1></div>
-      </div>
-      <div>
-        <div><button>Login</button></div>
-        <div><button>Register</button></div>
+        <button>Login</button>
+        <button>Register</button>
       </div>
     </header>
   )
