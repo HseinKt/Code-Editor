@@ -4,8 +4,8 @@ const header =()=>{
       <h3>Logo</h3>
       <h1>Editor Name</h1>
       <div>
-        <button>Login</button>
-        <button>Register</button>
+        <button className="login">Login</button>
+        <button className="register" >Register</button>
       </div>
     </header>
   )
