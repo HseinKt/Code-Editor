@@ -5,10 +5,12 @@ import "ace-builds/src-noconflict/mode-python";
 
 import "ace-builds/src-noconflict/theme-monokai";
 import { useState } from "react";
+import CodingHeader from "../components/coding_panel/coding_header";
 const CodingPage = () => {
     const [code,setCode] = useState('')
   return (
     <div>
+        <CodingHeader/>
       <AceEditor
         placeholder="Start Coding... "
         mode="python"
