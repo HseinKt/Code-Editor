@@ -5,7 +5,7 @@ const landingPage = () => {
   return (
     <div>
       <Header/>
-      {/* <Footer/> */}
+      <Footer/>
     </div>
   )
 }
