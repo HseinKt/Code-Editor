@@ -1,13 +1,141 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+body {
+  background-color: #e9eefb;
+  font-family: "Poppins", sans-serif;
+}
+
+.container {
+  display: flex;
+}
+
+.container2 {
+  display: flex;
+}
+
+.navbar {
+  background-color: #bface2;
+  display: flex;
+  width: 100%;
+  height: 10vh;
+}
+
+.side-panel {
+  display: inline-block;
+  background-color: #655dbb;
+  width: 15%;
+  height: 230vh;
+}
+
+.admin-title {
+  flex: 1 1 auto;
+  margin-left: 17vw;
+  margin-top: 2vh;
+  font-size: 42px;
+}
+
+.logout {
+  margin-right: 3vw;
+  margin-top: 3vh;
+  font-size: 22px;
+  color: rgb(201, 52, 52);
+}
+
+.side-title {
+  margin-left: 2vw;
+  padding-top: 10vh;
+  font-size: 2vw;
+}
+
+.users-btn {
+  padding: 5%;
+  margin-top: 15vh;
+  padding-left: 5vw;
+  font-size: 1.5vw;
+}
+
+.users-btn:hover,
+.products-btn:hover {
+  background-color: #bface2;
+}
+.products-btn {
+  padding: 5%;
+  margin-top: 3vh;
+  padding-left: 5vw;
+  font-size: 1.5vw;
+}
+
+table {
+  width: 70vw;
+  margin-left: 8vw;
+  margin-top: 8vh;
+}
+th,
+td {
+  border: 2px solid #ddd;
+  padding: 8px;
+  text-align: center;
+}
+th {
+  font-size: 18px;
+  font-weight: bold;
+}
+td {
+  font-size: 16px;
+  vertical-align: middle;
+}
+tr:hover {
+  background-color: #655dbb;
+}
+
+.content {
+  display: inline-block;
+}
+
+.content-title {
+  font-size: 64px;
+  margin-left: 35vw;
+  margin-top: 5vh;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+.delete {
+  padding: 10px;
+  background-color: #3e54ac;
+  margin-right: 10px;
+  border-radius: 10px;
+}
+
+.edit {
+  padding: 10px;
+  background-color: #bface2;
+  border-radius: 10px;
+}
+.add_product_button {
+  margin-left: 70%;
+  padding: 10px;
+  background-color: #655dbb;
+  border-radius: 10px;
+}
+
+.home {
+  padding: 10px;
+  background: #655dbb;
+  border-radius: 10px;
 }
