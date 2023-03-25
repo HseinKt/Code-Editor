@@ -1,10 +1,13 @@
-import UserTable from "./components/UsersTable/UserTable";
-
+import { Routes, Route } from "react-router-dom";
+import CodingPage from "./pages/coding-page";
 function App() {
   return (
-    <div>
-      <UserTable />
-    </div>
+    <>
+      <Routes>
+        {/* <Route path="/" element = {}/> */}
+        <Route path="/" element={<CodingPage />} />
+      </Routes>
+    </>
   );
 }
 
