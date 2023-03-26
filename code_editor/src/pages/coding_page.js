@@ -3,6 +3,7 @@ import "ace-builds/src-noconflict/ace";
 import "ace-builds/src-noconflict/mode-python";
 
 import "ace-builds/src-noconflict/theme-monokai";
+import "ace-builds/src-noconflict/theme-solarized_dark";
 import "ace-builds/src-noconflict/theme-tomorrow_night_blue";
 import { useState } from "react";
 import CodingHeader from "../components/coding_panel/coding_header";
@@ -51,7 +52,7 @@ const CodingPage = () => {
           mode="python"
           width="100%"
           height="100%"
-          theme="tomorrow_night_blue"
+          theme="solarized_dark"
           fontSize={20}
           showPrintMargin={true}
           showGutter={true}
