@@ -1,8 +1,8 @@
-:root{
-  --blue : #1363DF;
-  --dark_blue: #06283D;
-  --cyan: #47B5FF;
-  --light_blue: #DFF6FF; 
+:root {
+  --blue: #1363df;
+  --dark_blue: #06283d;
+  --cyan: #47b5ff;
+  --light_blue: #dff6ff;
 }
 body {
   margin: 0;
@@ -12,7 +12,7 @@ body {
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
 /* Elements section */
@@ -37,13 +37,13 @@ label {
 
 /* Landing Page */
 /* Header */
-.logo{
+.logo {
   height: 70px;
 }
-.header{
+.header {
   position: relative;
   display: flex;
-  align-items: center; 
+  align-items: center;
   justify-content: space-between;
   background-color: var(--blue);
   height: 100px;
@@ -55,24 +55,30 @@ label {
   left: 50%;
   transform: translate(-50%, -50%);
   font-size: 3rem;
-  background-image: linear-gradient(to right, #2bff00, #fffb00, #e186fd, #ff6600);
-  -webkit-background-clip: text; 
-  background-clip: text; 
+  background-image: linear-gradient(
+    to right,
+    #2bff00,
+    #fffb00,
+    #e186fd,
+    #ff6600
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
   color: transparent;
   background-size: 300%;
-  background-position: -100%;  
+  background-position: -100%;
   animation: animatedText 5s infinite alternate-reverse;
 }
-@keyframes animatedText{
-  to{
-    background-position: 100%; 
+@keyframes animatedText {
+  to {
+    background-position: 100%;
   }
 }
-.header>div{
+.header > div {
   display: flex;
   align-items: center;
 }
-.header>div>button{
+.header > div > button {
   font-size: 20px;
   padding: 5px;
   margin: 5px;
@@ -82,34 +88,35 @@ label {
   cursor: pointer;
 }
 
-.login{
+.login {
   color: var(--light_blue);
   background-color: var(--cyan);
 }
-.register{
-  color: black;
-  background-color: var(--light_blue);
-} 
-.login:hover{
+.register {
   color: black;
   background-color: var(--light_blue);
 }
-.register:hover{
+.login:hover {
+  color: black;
+  background-color: var(--light_blue);
+}
+.register:hover {
   color: var(--light_blue);
   background-color: var(--cyan);
 }
-.login:active, .register:active{
+.login:active,
+.register:active {
   border: 0px;
 }
 /* Landing Body */
-.landing_body{
+.landing_body {
   display: flex;
   flex-direction: column;
   background-color: var(--light_blue);
   justify-content: space-between;
   padding: 100px;
 }
-.landing_row{
+.landing_row {
   display: flex;
   padding: 50px 100px;
   align-items: center;
@@ -137,8 +144,8 @@ label {
   line-height: 1.5;
   margin-bottom: 2rem;
 }
-.landing_row button {
-  background-color: var(--dark_blue);;
+.landing_row a {
+  background-color: var(--dark_blue);
   color: white;
   border: none;
   font-size: 1.5rem;
@@ -146,6 +153,7 @@ label {
   border-radius: 5px;
   cursor: pointer;
   transition: all 0.2s ease-in-out;
+  text-decoration: none;
 }
 .landing_row button:hover {
   border: 1px black solid;
@@ -155,45 +163,48 @@ label {
 .landing_row img {
   max-width: 100%;
   /* height: 10%; */
-  border-radius: 10px ;
+  border-radius: 10px;
 }
 
 /* Footer */
-.footer{
+.footer {
   display: flex;
   flex-direction: column;
   align-items: center;
   background-color: var(--blue);
 }
-.footer>div{
+.footer > div {
   display: flex;
 }
-.footer h2{
+.footer h2 {
   padding: 5px;
 }
-.footer div>p{
+.footer div > p {
   margin-right: 10px;
   padding-right: 10px;
 }
-.footer div p:not(:last-child){
+.footer div p:not(:last-child) {
   border-right: 1px solid black;
 }
 
 /* Registeration page */
-.reg-container, .lgn-container {
+.reg-container,
+.lgn-container {
   display: flex;
   align-items: center;
   justify-content: center;
   height: 100vh;
 }
-.register-container, .login-container {
+.register-container,
+.login-container {
   border-radius: 40px;
   background-color: var(--cyan);
   width: 30%;
   padding: 50px;
   box-sizing: border-box;
 }
-.register-title, .login-title {
+.register-title,
+.login-title {
   text-align: center;
 }
 
@@ -224,7 +235,7 @@ label {
   display: flex;
   justify-content: center;
 }
-.gender>div{
+.gender > div {
   display: flex;
   padding: 5px;
 }
@@ -237,7 +248,8 @@ label {
   justify-content: space-between;
 }
 
-.register-button, .login-button {
+.register-button,
+.login-button {
   display: block;
   width: 50%;
   padding: 10px;
@@ -249,7 +261,7 @@ label {
   font-weight: bold;
   cursor: pointer;
 }
-.register-button:hover{
+.register-button:hover {
   background-color: var(--light_blue);
   color: black;
 }
@@ -262,7 +274,7 @@ label {
   width: 40%;
   height: max-content;
   background-color: lightgrey;
-  border: 15px solid #47B5FF;
+  border: 15px solid #47b5ff;
   padding: 50px;
   margin: 20px;
   margin-left: 24%;
@@ -282,7 +294,6 @@ label {
   text-align: center;
 }
 
-
 /* Type your styling codes above this please */
 
 /* Media queries */
@@ -292,7 +303,8 @@ label {
     font-size: 3rem;
     transform: none;
   }
-  .register-container, .login-container {
+  .register-container,
+  .login-container {
     border-radius: 40px;
     width: 70%;
   }
@@ -305,12 +317,13 @@ label {
   }
   .landing_row button {
     padding: 0.6rem 1.2rem;
-    margin:0.6rem 1.2rem;
+    margin: 0.6rem 1.2rem;
   }
 }
 
 @media only screen and (min-width: 601px) and (max-width: 1000px) {
-  .register-container, .login-container {
+  .register-container,
+  .login-container {
     border-radius: 40px;
     width: 50%;
   }
@@ -322,16 +335,15 @@ label {
 
   .landing_row {
     flex-direction: column;
-    padding: 40px 20px;    
+    padding: 40px 20px;
   }
   .landing_row button {
     padding: 0.6rem 1.2rem;
-    margin:0.6rem 1.2rem;
+    margin: 0.6rem 1.2rem;
   }
   .landing_row img {
     height: 80%;
   }
 }
-
 
 /* Type your styling codes above media queries please */
