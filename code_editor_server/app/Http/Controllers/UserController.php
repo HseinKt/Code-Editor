@@ -12,7 +12,7 @@ class UserController extends Controller
 {
     public function __construct()
     {
-        $this->middleware('auth:api', ['except' => ['getAllUsers', 'sendMessage']]);
+        $this->middleware('auth:api', ['except' => ['getAllUsers', 'sendMessage','getMessages']]);
     }
 
     public function getAllUsers () 
@@ -53,5 +53,16 @@ class UserController extends Controller
                 'message' => 'this is the same user',
             ]);
         }
+    }
+
+    public function getMessages(Request $request)
+    {
+        $messages = Message::where('sender_id',$request->sender_id)->get();
+        
+        return response()->json([
+            'status' => 'success',
+            'message' => 'messages founded',
+            'users' => $messages,
+        ]);
     }
 }

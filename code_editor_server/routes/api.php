@@ -23,4 +23,6 @@ Route::group(["prefix" => "v1"], function() {
 
     Route::get('/get_all_users', [UserController::class, "getAllUsers"]);
     Route::post('/send_message', [UserController::class, "sendMessage"]);
+    Route::post('/get_message', [UserController::class, "getMessages"]);
+
 });
