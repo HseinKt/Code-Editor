@@ -2,9 +2,9 @@ import CodeButton from "./code_button";
 
 const SavingInput = (props) => {
   return (
-    <li style={{display:"flex"}}>
+    <li className="saving-input">
       <input onChange={props.change} className="save_input" type="text" placeholder="className" />
-      <CodeButton onClick={props.onClick}>save</CodeButton>
+      <CodeButton  onClick={props.onClick}>save</CodeButton>
     </li>
   );
 };
