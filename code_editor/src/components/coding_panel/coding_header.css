@@ -9,6 +9,7 @@
     width: 40%;
     background: var(--light_blue);
     height: 100%;
+    border: 2px solid var(--dark_blue);
 }
 
 .console label {
@@ -53,7 +54,7 @@
     justify-content: start;
     align-items: baseline;
     padding: 10px 0px;
-    background: var(--cyan);
+    background: var(--light_blue);
     height: 100%;
     color: var(--dark_blue);
     animation: show;
@@ -82,7 +83,7 @@
     padding: 5px 15px;
 }
 .my-files p:hover {
-    background: var(--light_blue);
+    background: var(--cyan);
 }
 
 @keyframes show{
