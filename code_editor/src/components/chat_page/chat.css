@@ -1,0 +1,52 @@
+body {
+    margin: 0;
+    font-family: sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+}
+.sendButton {
+    width: 50%;
+    height: 10%;
+    padding: 10px;
+    border-radius: 10%;
+    background-image: url('../images/send.jpg');
+    background-position: left;
+    background-repeat: no-repeat;
+    background-size: 25px 50px;
+}
+/* 
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+} */
+.formText {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    /* align-items:flex-end; */
+    border-top: 1px solid #ccc;
+    padding: 10px;
+}
+.inputText {
+    width: 50%;
+    height: 40px;
+    border-radius: 50px;
+    border: 1px solid #030303;
+}
+
+.chatTextContainer {
+    display: flex;
+    justify-content: flex-start;
+    margin-bottom: 10px;
+}
+
+.message {
+    background-color: #0077FF;
+    color: white;
+    padding: 6px 12px;
+    border-radius: 20px;
+    margin-left: 20px;
+}
+
