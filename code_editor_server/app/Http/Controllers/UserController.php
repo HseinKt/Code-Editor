@@ -28,7 +28,30 @@ class UserController extends Controller
 
     public function sendMessage(Request $request) 
     {
+        $sender_id = $request->sender_id;
+        $target_id  = $request->target_id;
+        $body = $request->message_body;
 
+        if ($sender_id != $target_id) 
+        {
+            $message = Message::create([
+                'message_body' => $body,
+                'sender_id' => $sender_id,
+                'target_id' => $target_id,
+            ]);
+
+            return response()->json([
+                'status' => 'success',
+                'message' => 'message sent',
+                'users' => $message,
+            ]);
+        }
+        else 
+        {
+            return response()->json([
+                'status' => 'error',
+                'message' => 'this is the same user',
+            ]);
+        }
     }
-
 }
