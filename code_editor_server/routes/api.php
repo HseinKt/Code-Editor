@@ -2,6 +2,8 @@
 
 use App\Http\Controllers\CodeController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\UserController;
+
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -13,8 +15,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::post('/output', [CodeController::class, 'getOutput']);
+Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
+    return $request->user();
+});
 
-// Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-//     return $request->user();
-// });
+Route::group(["prefix" => "v1"], function() {
+
+    Route::get('/get_all_users', [UserController::class, "getAllUsers"]);
+    Route::post('/send_message', [UserController::class, "sendMessage"]);
+});
