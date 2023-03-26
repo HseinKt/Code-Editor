@@ -1,6 +1,6 @@
 const login = ()=>{
   return(
-    <div class="container">
+    <div class="lgn-container">
       <div class="login-container">
         <h1 class="login-title">Login</h1>
         <div class="login-form">
@@ -12,8 +12,7 @@ const login = ()=>{
           <input type="password" id="password" placeholder="Enter your Password"/>
           <button type="submit" class="login-button" id="login-button">Login</button>
           <p class="forgot-password"><a href="#">Forgot your password?</a></p>
-          <p class="register-link">Not registered? <a href="register.html">Register as a new User</a>
-          </p>
+          <p class="register-link">Not registered? <a href="register.html">Register as a new User</a></p>
         </div>
       </div>
     </div>
