@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\Http\Controllers\AuthController;
 use App\Models\User;
 use App\Http\Controllers\FunctionsController;
 use Illuminate\Support\Facades\Auth;
@@ -39,14 +39,14 @@ class RegisterController extends Controller
             $user->last_name = $last_name;
             $user->gender = $gender;
             
-            $picture_encoded = $functions_controller->savePicture($request);
-            $user->picture = $picture_encoded;
+            $image_encoded = $functions_controller->saveImage($request);
+            $user->picture = $image_encoded;
             $user->created_at = $date;
     
             $user->save();
             
             return response() -> json([
-                "user"=>$user
+                "success"=>true,
             ]);
 
         }else{
