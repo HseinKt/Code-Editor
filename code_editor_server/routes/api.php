@@ -22,5 +22,5 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 Route::group(["prefix" => "v1"], function() {
 
     Route::get('/get_all_users', [UserController::class, "getAllUsers"]);
-
+    Route::post('/send_message', [UserController::class, "sendMessage"]);
 });
