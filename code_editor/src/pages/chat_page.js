@@ -28,6 +28,7 @@ const ChatingPage = () => {
             <div className="ChatBox">
                 {messages.map((message,index) => (
                     <ChatText key={index} message={message}/>
+                    
                 ))}
             </div>
         </div>
