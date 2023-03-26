@@ -38,7 +38,8 @@ label {
 /* Landing Page */
 
 .logo{
-  height: 50px;
+  height: 200px;
+  margin: 0px;
 }
 .header{
   position: relative;
