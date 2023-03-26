@@ -8,10 +8,12 @@ import "ace-builds/src-noconflict/theme-solarized_dark";
 import { useState } from "react";
 import CodingHeader from "../components/coding_panel/coding_header";
 import MyFiles from "../components/coding_panel/my_files";
+import UseHttp from "../hooks/http-hook";
 const CodingPage = () => {
   const [showFiles, setShowFiles] = useState(true);
   const [code, setCode] = useState('');
   const [isSaving,setIsSaving] = useState(false);
+  const [output,setOutput] = useState("")
   const toggleShowMyFiles = () => {
     console.log(showFiles);
     setShowFiles(!showFiles);
@@ -21,8 +23,11 @@ const CodingPage = () => {
     setIsSaving(!isSaving);
     console.log(isSaving);
   };
-  const runHandler = () => {
-    console.log("run");
+  const runHandler = async() => {
+    const formData = new FormData()
+    formData.append("code",code)
+    const data = await UseHttp("http://127.0.0.1:8000/api/output","POST",formData);
+    setOutput(data.output);
   };
   const savingclassNameHandler = () => {
     console.log("savingclassNameHandler");
@@ -30,7 +35,6 @@ const CodingPage = () => {
   };
   const codeHandler = (value) => {
     setCode(value)
-    console.log(value);
   }
 
   const fileNameChangleHandler = (e) => {
@@ -70,7 +74,7 @@ const CodingPage = () => {
             {" "}
             {`->`}output :<br />
           </label>
-          <label> </label>
+          <label>{output}</label>
           </div>}
         </div>
       </div>
