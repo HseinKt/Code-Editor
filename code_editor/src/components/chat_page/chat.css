@@ -35,3 +35,17 @@ body {
     border-radius: 50px;
     border: 1px solid #030303;
 }
+
+.chatTextContainer {
+    display: flex;
+    justify-content: flex-start;
+    margin-bottom: 10px;
+}
+
+.message {
+    background-color: #0077FF;
+    color: white;
+    padding: 6px 12px;
+    border-radius: 20px;
+    margin-left: 20px;
+}
