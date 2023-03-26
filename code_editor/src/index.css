@@ -36,10 +36,9 @@ label {
 }
 
 /* Landing Page */
-
+/* Header */
 .logo{
-  height: 200px;
-  margin: 0px;
+  height: 70px;
 }
 .header{
   position: relative;
@@ -48,13 +47,14 @@ label {
   justify-content: space-between;
   background-color: var(--blue);
   height: 100px;
+  padding: 10px;
 }
 .header h1 {
   position: absolute;
   top: 25%;
   left: 50%;
   transform: translate(-50%, -50%);
-
+  font-size: 3rem;
   background-image: linear-gradient(to right, #2bff00, #fffb00, #e186fd, #ff6600);
   -webkit-background-clip: text; 
   background-clip: text; 
@@ -101,11 +101,65 @@ label {
 .login:active, .register:active{
   border: 0px;
 }
+/* Landing Body */
+.landing_body{
+  display: flex;
+  flex-direction: column;
+  background-color: var(--light_blue);
+  justify-content: space-between;
+  padding: 100px;
+}
+.landing_row{
+  display: flex;
+  padding: 50px 100px;
+  align-items: center;
+  justify-content: space-evenly;
+}
+.landing_row div {
+  max-width: 500px;
+}
 
+.landing_row h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+.landing_row h4 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+.landing_row h5 {
+  color: gray;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+.landing_row p {
+  font-size: 1.2rem;
+  line-height: 1.5;
+  margin-bottom: 2rem;
+}
+.landing_row button {
+  background-color: var(--dark_blue);;
+  color: white;
+  border: none;
+  font-size: 1.5rem;
+  padding: 1rem 2rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+.landing_row button:hover {
+  border: 1px black solid;
+  background-color: var(--light_blue);
+  color: var(--dark_blue);
+}
+.landing_row img {
+  max-width: 100%;
+  /* height: 10%; */
+  border-radius: 10px ;
+}
+
+/* Footer */
 .footer{
-  position: absolute;
-  width:100%;
-  bottom: 0;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -232,10 +286,26 @@ label {
 /* Type your styling codes above this please */
 
 /* Media queries */
-@media only screen and (max-width: 900px) {
+@media only screen and (max-width: 600px) {
+  .header h1 {
+    position: static;
+    font-size: 3rem;
+    transform: none;
+  }
   .register-container, .login-container {
     border-radius: 40px;
     width: 70%;
+  }
+  .landing_row {
+    flex-direction: column;
+    padding: 40px 20px;
+  }
+  .landing_row img {
+    height: 400px;
+  }
+  .landing_row button {
+    padding: 0.6rem 1.2rem;
+    margin:0.6rem 1.2rem;
   }
 }
 
@@ -243,6 +313,23 @@ label {
   .register-container, .login-container {
     border-radius: 40px;
     width: 50%;
+  }
+  .header h1 {
+    position: static;
+    font-size: 3rem;
+    transform: none;
+  }
+
+  .landing_row {
+    flex-direction: column;
+    padding: 40px 20px;    
+  }
+  .landing_row button {
+    padding: 0.6rem 1.2rem;
+    margin:0.6rem 1.2rem;
+  }
+  .landing_row img {
+    height: 80%;
   }
 }
 

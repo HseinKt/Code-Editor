@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\CodeController;
+use App\Http\Controllers\RegisterController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 
@@ -23,4 +24,7 @@ Route::group(["prefix" => "v1"], function() {
 
     Route::get('/get_all_users', [UserController::class, "getAllUsers"]);
     Route::post('/send_message', [UserController::class, "sendMessage"]);
+    Route::post('/get_message', [UserController::class, "getMessages"]);
+    Route::post('/register', [RegisterController::class, "register"]);
+    
 });
