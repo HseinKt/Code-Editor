@@ -30,7 +30,7 @@ const CodingPage = () => {
       "output",
       "POST",
       formData,{
-        Authorization:"Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL3YxL2xvZ2luIiwiaWF0IjoxNjc5ODY5MDg4LCJleHAiOjE2Nzk4NzI2ODgsIm5iZiI6MTY3OTg2OTA4OCwianRpIjoiejh0NmMxR0JvcThWZ1RvcyIsInN1YiI6IjMiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.o0Oalc1STnfzc7gxGlUodXTOrnj5amx14e345O-P9O8",
+        Authorization:"Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL3YxL2xvZ2luIiwiaWF0IjoxNjc5ODY2MDA4LCJleHAiOjE2Nzk4Njk2MDgsIm5iZiI6MTY3OTg2NjAwOCwianRpIjoiZFE3V1ZtYVZOMmlVRkRCSiIsInN1YiI6IjEiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.LPon2xU2jxSioS1laBT8p9xrBhdWfQS0kgreudrk3jI",
       }
       
     );
