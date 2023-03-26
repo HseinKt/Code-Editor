@@ -25,7 +25,8 @@ Route::group(["prefix" => "v1"], function() {
     Route::group(['middleware' => 'auth:api'], function() {
         Route::get('/get_all_users', [UserController::class, "getAllUsers"]);
         Route::post('/send_message', [UserController::class, "sendMessage"]);
-        Route::post('/get_message', [UserController::class, "getMessages"]);    
+        Route::post('/get_message', [UserController::class, "getMessages"]); 
+        Route::post('/output',[CodeController::class, "getOutput"]);   
     });
 
 });

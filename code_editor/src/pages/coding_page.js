@@ -11,9 +11,9 @@ import MyFiles from "../components/coding_panel/my_files";
 import UseHttp from "../hooks/http-hook";
 const CodingPage = () => {
   const [showFiles, setShowFiles] = useState(true);
-  const [code, setCode] = useState('');
-  const [isSaving,setIsSaving] = useState(false);
-  const [output,setOutput] = useState("")
+  const [code, setCode] = useState("");
+  const [isSaving, setIsSaving] = useState(false);
+  const [output, setOutput] = useState("");
   const toggleShowMyFiles = () => {
     console.log(showFiles);
     setShowFiles(!showFiles);
@@ -23,32 +23,39 @@ const CodingPage = () => {
     setIsSaving(!isSaving);
     console.log(isSaving);
   };
-  const runHandler = async() => {
-    const formData = new FormData()
-    formData.append("code",code)
-    const data = await UseHttp("http://127.0.0.1:8000/api/output","POST",formData);
+  const runHandler = async () => {
+    const formData = new FormData();
+    formData.append("code", code);
+    const data = await UseHttp(
+      "http://127.0.0.1:8000/api/v1/output",
+      "POST",
+      formData,{
+        Authorization:"Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL3YxL2xvZ2luIiwiaWF0IjoxNjc5ODY2MDA4LCJleHAiOjE2Nzk4Njk2MDgsIm5iZiI6MTY3OTg2NjAwOCwianRpIjoiZFE3V1ZtYVZOMmlVRkRCSiIsInN1YiI6IjEiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.LPon2xU2jxSioS1laBT8p9xrBhdWfQS0kgreudrk3jI",
+      }
+      
+    );
     setOutput(data.output);
   };
   const savingclassNameHandler = () => {
     console.log("savingclassNameHandler");
-    setIsSaving(false)
+    setIsSaving(false);
   };
   const codeHandler = (value) => {
-    setCode(value)
-  }
+    setCode(value);
+  };
 
   const fileNameChangleHandler = (e) => {
     console.log(e.target.value);
-  }
+  };
   return (
     <>
       <CodingHeader
         onSave={saveHandler}
         onshowfiles={toggleShowMyFiles}
         onRun={runHandler}
-        onSaveClassName = {savingclassNameHandler}
-        isSaving = {isSaving}
-        onChange = {fileNameChangleHandler}
+        onSaveClassName={savingclassNameHandler}
+        isSaving={isSaving}
+        onChange={fileNameChangleHandler}
       />
       <div className="code">
         <AceEditor
@@ -62,20 +69,24 @@ const CodingPage = () => {
           showGutter={true}
           highlightActiveLine={true}
           value={code}
-          onChange = {codeHandler}
+          onChange={codeHandler}
           setOptions={{
             showLineNumbers: true,
             tabSize: 4,
           }}
         />
         <div className="console">
-          {showFiles ? <MyFiles/> :  <div>
-          <label>
-            {" "}
-            {`->`}output :<br />
-          </label>
-          <label>{output}</label>
-          </div>}
+          {showFiles ? (
+            <MyFiles />
+          ) : (
+            <div>
+              <label>
+                {" "}
+                {`->`}output :<br />
+              </label>
+              <label>{output}</label>
+            </div>
+          )}
         </div>
       </div>
     </>
