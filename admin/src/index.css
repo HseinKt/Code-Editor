@@ -55,9 +55,9 @@ body {
 }
 
 .side-title {
-  margin-left: 4vw;
+  margin-left: 3vw;
   padding-top: 10vh;
-  font-size: 2vw;
+  font-size: 3rem;
   color: #06283d;
 }
 
@@ -65,7 +65,7 @@ body {
   padding: 5%;
   margin-top: 15vh;
   padding-left: 5vw;
-  font-size: 1.5vw;
+  font-size: 1.8rem;
   color: #06283d;
 }
 
