@@ -9,7 +9,7 @@ use PHPOpenSourceSaver\JWTAuth\Facades\JWTAuth;
 class LoginController extends Controller
 {
     public function login(Request $request){
-
+        
         $functions_controller = new FunctionsController();
         $username = $functions_controller -> entryValidate($request ->username);
         $password = $functions_controller -> entryValidate($request ->password);
