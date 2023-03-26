@@ -5,13 +5,14 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use App\Models\User;
+use App\Models\Message;
 
 
 class UserController extends Controller
 {
     public function __construct()
     {
-        $this->middleware('auth:api', ['except' => ['getAllUsers']]);
+        $this->middleware('auth:api', ['except' => ['getAllUsers', 'sendMessage']]);
     }
 
     public function getAllUsers () 
@@ -24,4 +25,10 @@ class UserController extends Controller
             'users' => $users,
         ]);
     }
+
+    public function sendMessage(Request $request) 
+    {
+
+    }
+
 }
