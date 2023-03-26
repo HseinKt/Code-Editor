@@ -38,22 +38,35 @@ label {
 /* Landing Page */
 
 .logo{
-  height: 50px;
+  height: 200px;
+  margin: 0px;
 }
-
 .header{
   position: relative;
   display: flex;
   align-items: center; 
   justify-content: space-between;
   background-color: var(--blue);
+  height: 100px;
 }
 .header h1 {
   position: absolute;
   top: 25%;
   left: 50%;
   transform: translate(-50%, -50%);
-  padding: 50px;
+
+  background-image: linear-gradient(to right, #2bff00, #fffb00, #e186fd, #ff6600);
+  -webkit-background-clip: text; 
+  background-clip: text; 
+  color: transparent;
+  background-size: 300%;
+  background-position: -100%;  
+  animation: animatedText 5s infinite alternate-reverse;
+}
+@keyframes animatedText{
+  to{
+    background-position: 100%; 
+  }
 }
 .header>div{
   display: flex;
@@ -61,7 +74,7 @@ label {
 }
 .header>div>button{
   font-size: 20px;
-  padding: 10px;
+  padding: 5px;
   margin: 5px;
   border: 1px solid black;
   transition: 0.3s;
@@ -85,21 +98,24 @@ label {
   color: var(--light_blue);
   background-color: var(--cyan);
 }
-.login:active {
-  padding: 9px;
-}
-.register:active {
-  padding: 9px;
+.login:active, .register:active{
+  border: 0px;
 }
 
 .footer{
+  position: absolute;
+  width:100%;
+  bottom: 0;
   display: flex;
   flex-direction: column;
   align-items: center;
   background-color: var(--blue);
 }
-.footer >div{
+.footer>div{
   display: flex;
+}
+.footer h2{
+  padding: 5px;
 }
 .footer div>p{
   margin-right: 10px;
