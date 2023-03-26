@@ -1,8 +1,9 @@
 
 const UseHttp =  async (url, method = "GET", body = "", header = {}) => {
     let data;
+    const URL = "http://127.0.0.1:8000/api/v1/";
     try {
-        const Response = await fetch(url,{
+        const Response = await fetch(URL+url,{
             method : method,
             headers: header,
             body: !!body ? body : null  

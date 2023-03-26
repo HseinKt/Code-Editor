@@ -27,7 +27,7 @@ const CodingPage = () => {
     const formData = new FormData();
     formData.append("code", code);
     const data = await UseHttp(
-      "http://127.0.0.1:8000/api/v1/output",
+      "output",
       "POST",
       formData,{
         Authorization:"Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL3YxL2xvZ2luIiwiaWF0IjoxNjc5ODY2MDA4LCJleHAiOjE2Nzk4Njk2MDgsIm5iZiI6MTY3OTg2NjAwOCwianRpIjoiZFE3V1ZtYVZOMmlVRkRCSiIsInN1YiI6IjEiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.LPon2xU2jxSioS1laBT8p9xrBhdWfQS0kgreudrk3jI",
