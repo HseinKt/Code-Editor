@@ -17,6 +17,8 @@ class UserController extends Controller
 
     public function getAllUsers () 
     {
+        // $auth = Auth::user();
+        // if ($auth)
         $users = User::all();
 
         return response()->json([
