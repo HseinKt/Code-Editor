@@ -1,5 +1,7 @@
 import Header from "../components/landing_page/header"
 import Chat from "../components/chat_page/chat"
+import ChatText from "../components/chat_page/chat_text"
+
 import { useState } from "react";
 
 const ChatingPage = () => {
@@ -14,23 +16,20 @@ const ChatingPage = () => {
         e.preventDefault();
         setMessages([...messages, value]);
         setValue("");
-
     }
     console.log(messages);
 
     return ( 
         <div>
             <Header/>
-            <form onSubmit={handleMessageSend}>
-                <input 
-                    type="text" 
-                    value={value} 
-                    onChange={handleValue}
-                />
-                <button type="submit">
-                    <div className="sendButton"> send</div>
-                </button>
-            </form>
+            <Chat value={value} handleValue={handleValue} handleMessageSend={handleMessageSend}/>
+
+            <div>
+                {messages.map((message,index) => (
+                    //<li>message</li>
+                    <ChatText key={index} message={message}/>
+                ))}
+            </div>
         </div>
      );
 }
