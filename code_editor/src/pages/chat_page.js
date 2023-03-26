@@ -1,6 +1,7 @@
 import Header from "../components/landing_page/header"
 import Chat from "../components/chat_page/chat"
 import ChatText from "../components/chat_page/chat_text"
+import "../index.css";
 
 import { useState } from "react";
 
@@ -24,9 +25,8 @@ const ChatingPage = () => {
             <Header/>
             <Chat value={value} handleValue={handleValue} handleMessageSend={handleMessageSend}/>
 
-            <div>
+            <div className="ChatBox">
                 {messages.map((message,index) => (
-                    //<li>message</li>
                     <ChatText key={index} message={message}/>
                 ))}
             </div>

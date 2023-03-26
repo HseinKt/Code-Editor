@@ -166,3 +166,18 @@ a {
   background-color: var(--light_blue);
   color: black;
 }
+
+/* Chat box */
+.ChatBox {
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: flex-start;
+  width: 40%;
+  height: max-content;
+  background-color: lightgrey;
+  border: 15px solid #47B5FF;
+  padding: 50px;
+  margin: 20px;
+  margin-left: 24%;
+  margin-right: 20%;
+}
