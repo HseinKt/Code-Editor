@@ -11,16 +11,14 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('users', function (Blueprint $table) {
+        Schema::create('messages', function (Blueprint $table) {
             $table->id();
-            $table->string('first_name');
-            $table->string('last_name');
-            $table->string('username')->unique();
-            $table->string('password');
-            $table->string('salt');
-            $table->string('gender');
-            $table->string('picture');
+            $table->unsignedBigInteger('sender_id');
+            $table->unsignedBigInteger('target_id');
+            $table->text("message_body");
             $table->timestamps();
+            $table->foreign('sender_id')->references('id')->on("users");
+            $table->foreign('target_id')->references('id')->on("users");
         });
     }
 
@@ -29,6 +27,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('users');
+        Schema::dropIfExists('messages');
     }
 };

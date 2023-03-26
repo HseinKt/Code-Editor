@@ -2,9 +2,9 @@ import AceEditor from "react-ace";
 import "ace-builds/src-noconflict/ace";
 import "ace-builds/src-noconflict/mode-python";
 
-import "ace-builds/src-noconflict/theme-monokai";
+// import "ace-builds/src-noconflict/theme-monokai";
 import "ace-builds/src-noconflict/theme-solarized_dark";
-import "ace-builds/src-noconflict/theme-tomorrow_night_blue";
+// import "ace-builds/src-noconflict/theme-tomorrow_night_blue";
 import { useState } from "react";
 import CodingHeader from "../components/coding_panel/coding_header";
 import MyFiles from "../components/coding_panel/my_files";
