@@ -1,4 +1,5 @@
 import Compilerimage from "../images/compiler.png"
+import Serverimage from "../images/servers.png"
 
 const landing_body=()=>{
   return(
@@ -17,20 +18,28 @@ const landing_body=()=>{
           <p>
             Codeit is the best tool for starting, sharing, and developing
             projects in Python programming language, right from your
-            browser
+            browser.
           </p>
           <button>Start Coding</button>
         </div>
         <div>
-          <img src={Compilerimage} height="200px"></img>
+          <img src={Compilerimage} height="400px"/>
         </div>
       </div>
       <div className="landing_row">
         <div>
-          Hello World!
+          <img src={Serverimage} height="400px" />
         </div>
         <div>
-        Hello World!
+          <h2>
+            Compile your code faster than ever with our high-speed servers
+          </h2>
+          <p>
+            Our Python compiler's high-speed servers ensure faster and 
+            efficient code compilation, giving you more time for important 
+            project tasks. Enjoy a reliable and stable platform for your 
+            code, avoiding costly delays and setbacks.
+          </p>
         </div>
       </div>
     </div>
