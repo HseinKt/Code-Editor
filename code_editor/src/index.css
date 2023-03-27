@@ -265,13 +265,14 @@ label {
   flex-direction: column-reverse;
   align-items: flex-start;
   width: 40%;
-  height: max-content;
+  height: 40vh;
   background-color: lightgrey;
   border: 15px solid #47b5ff;
   padding: 50px;
   margin: 20px;
   margin-left: 24%;
   margin-right: 20%;
+  overflow: scroll;
 }
 
 /* login Page */

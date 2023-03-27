@@ -25,8 +25,15 @@ Route::group(["prefix" => "v1"], function () {
     Route::group(['middleware' => 'auth:api'], function () {
         Route::get('/get_all_users', [UserController::class, "getAllUsers"]);
         Route::post('/send_message', [UserController::class, "sendMessage"]);
+<<<<<<< HEAD
         Route::post('/get_message', [UserController::class, "getMessages"]);
         Route::post('/output', [CodeController::class, "getOutput"]);
         Route::post('/save_file', [CodeController::class, "saveCode"]);
+=======
+        Route::post('/get_message', [UserController::class, "getMessages"]); 
+        Route::post('/search_by_name', [UserController::class, "searchByName"]);
+        Route::post('/get_user_by_name', [UserController::class, "getUserByName"]); 
+        Route::post('/output',[CodeController::class, "getOutput"]);   
+>>>>>>> 772fad2493b243efe8f986e93fd5f6eaa3145edd
     });
 });

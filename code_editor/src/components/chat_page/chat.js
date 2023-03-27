@@ -6,6 +6,7 @@ const Chat = (props) => {
                 <input 
                     type="text" 
                     className="inputText"
+                    placeholder="type here" 
                     value={props.value} 
                     onChange={props.handleValue}
                 />

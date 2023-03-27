@@ -21,6 +21,23 @@ class UserController extends Controller
         ]);
     }
 
+    public function searchByName(Request $request)
+    {
+        $name = $request->first_name;
+        $users = User::where('first_name','LIKE',"%$name%")->get();
+        
+        return response()->json([
+            'status' => 'success',
+            'message' => 'user founded',
+            'users' => $users,
+        ]);
+    }
+
+    public function getUserByName(Request $request)
+    {
+
+    }
+    
     public function sendMessage(Request $request) 
     {
         $sender_id = $request->sender_id;
