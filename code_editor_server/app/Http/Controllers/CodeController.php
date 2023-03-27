@@ -30,5 +30,10 @@ class CodeController extends Controller
     {
         $id = Auth::id();
         $username = User::where('id', $id)->value('username');
+
+        $file_name = $request->file_name;
+        $code = $request->code;
+
+        Storage::put('saved_files/' . $username . '-' . $file_name . '.py', $code);
     }
 }
