@@ -1,22 +1,24 @@
-const UsersTable = () => {
+import Tr from "../admin/tablerows";
+
+const UsersTable = (props) => {
+  console.log(props.data)  
+  
   return (
-    <div class="table-container">
+    <div className="table-container">
       <table>
         <thead id="thead">
           <tr>
-            <th>Email</th>
+            <th>id</th>
+            <th>Username</th>
             <th>First Name</th>
             <th>Last Name</th>
-            <th>Age</th>
+            <th>is_deleted</th>
           </tr>
         </thead>
         <tbody id="tbody">
-          <tr>
-            <td>test</td>
-            <td>test</td>
-            <td>test</td>
-            <td>test</td>
-          </tr>
+          {props.data.map(item =>
+            <Tr data = {item}/>
+          )}
         </tbody>
       </table>
     </div>
