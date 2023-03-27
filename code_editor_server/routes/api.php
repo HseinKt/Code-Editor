@@ -32,10 +32,10 @@ Route::group(["prefix" => "v1"], function () {
         Route::post('/output', [CodeController::class, "getOutput"]);
         Route::post('/save_file', [CodeController::class, "saveCode"]);
         Route::get('/get_Files_Names', [CodeController::class, "getFilesNames"]);
+        Route::get('/get_code_from_file_name', [CodeController::class, "getCodeFromFileName"]);
     });
-    Route::group(['middleware' => 'admin.role' ,'prefix'=>'admin'], function () {
-        Route::get('/list_users',[AdminController::class, "listUsers"]);
+    Route::group(['middleware' => 'admin.role', 'prefix' => 'admin'], function () {
+        Route::get('/list_users', [AdminController::class, "listUsers"]);
         Route::post('/delete_user', [AdminController::class, "deleteUser"]);
     });
-
 });
