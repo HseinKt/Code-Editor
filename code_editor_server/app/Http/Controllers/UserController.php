@@ -40,8 +40,8 @@ class UserController extends Controller
     
     public function sendMessage(Request $request) 
     {
-        $sender_id = $request->sender_id;
-        $target_id  = $request->target_id;
+        $sender_id = Auth::id();
+        $target_id = $request->target_id;
         $body = $request->message_body;
 
         if ($sender_id != $target_id) 
@@ -67,9 +67,10 @@ class UserController extends Controller
         }
     }
 
-    public function getMessages(Request $request)
+    public function getMessages()
     {
-        $messages = Message::where('sender_id',$request->sender_id)->get();
+        $user = Auth::id();
+        $messages = Message::where('sender_id',$user)->get();
         
         return response()->json([
             'status' => 'success',

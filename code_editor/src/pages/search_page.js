@@ -36,11 +36,10 @@ const SearchingPage = () => {
         formData.append('first_name',searchInput);
         const data = await UseHttp("search_by_name","POST",formData,{
             Authorization:
-            "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL3YxL2xvZ2luIiwiaWF0IjoxNjc5OTIxNjUyLCJleHAiOjE2Nzk5MjUyNTIsIm5iZiI6MTY3OTkyMTY1MiwianRpIjoiSWQ4WTZ1WDg4RTlBaTM1VCIsInN1YiI6IjMiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.rRkcU05SMxXcGiqucEoeBY0ynwW_Cng7bPLHFKu9mow",
+            "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL3YxL2xvZ2luIiwiaWF0IjoxNjc5OTM3NDU1LCJleHAiOjE2Nzk5NDEwNTUsIm5iZiI6MTY3OTkzNzQ1NSwianRpIjoieHZGRERzQU16ZVBkT1hZciIsInN1YiI6IjQiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.nDhzZPXKBvZ8tJ1MdxS2FGoZVbMLKr13MZoDG-ynl2I",
         });
 
         setResults(data.users);
-
         console.log(data.users);
         setSearchInput("");
     }
@@ -55,8 +54,7 @@ const SearchingPage = () => {
                 ))}
             </div>
             <Footer/>
-        </div>
-        
+        </div> 
     )
 }
 
