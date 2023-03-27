@@ -91,14 +91,15 @@ class CodeController extends Controller
     }
 
 
-    public function downloadFile($file_name)
+    public function downloadFile(Request $request)
     {
-        $path = storage_path('app/saved_codes/' . $file_name);
-
-        if (!file_exists($path)) {
-            return response()->json(['message' => 'File not found.'], 404);
-        }
-
-        return Storage::download($path);
+        $file_name = $request->file_name;
+        $fileContent = Storage::get('saved_codes/' . $file_name);
+        echo $fileContent;
+        // return response()->json(['name' => $file_name]);
+        // $path = Storage::path('saved_codes/' . $file_name);
+        // echo response()->download($path, $file_name);
+        // return response()->download($path, $file_name);
+        // echo 'hello';
     }
 }
