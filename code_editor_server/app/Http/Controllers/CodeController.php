@@ -36,14 +36,24 @@ class CodeController extends Controller
         $code = $request->code;
         $name = $username . '-' . $file_name . '.py';
         Storage::put('saved_files/' . $name, $code);
-        $save_code = new SavedCodes();
-        $save_code->user_id = $id;
-        $save_code->created_at = now()->format('d-m-y');
-        // $save_code->updated_at = now()->format('d-m-y');
-        $save_code->file_url = $name;
+        $existing_code = SavedCodes::where('file_url', $name)->first();
 
-        $save_code->save();
+        if ($existing_code) {
+            return response()->json(
+                [
+                    'status' => 'failed',
+                    'error' => 'user_exits'
+                ]
 
+            );
+        } else {
+            // File URL does not exist, create a new SavedCodes instance
+            $save_code = new SavedCodes();
+            $save_code->user_id = $id;
+            $save_code->created_at = now()->format('d-m-y');
+            $save_code->file_url = $name;
+            $save_code->save();
+        }
 
         return response()->json(
             [
