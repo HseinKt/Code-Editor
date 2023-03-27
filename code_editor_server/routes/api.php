@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\CodeController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
@@ -31,6 +32,8 @@ Route::group(["prefix" => "v1"], function () {
         Route::post('/output', [CodeController::class, "getOutput"]);
         Route::post('/save_file', [CodeController::class, "saveCode"]);
     });
+    Route::get('/listusers',[AdminController::class, "listUsers"]);
+
 });
 
 
