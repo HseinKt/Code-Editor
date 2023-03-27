@@ -31,10 +31,9 @@ Route::group(["prefix" => "v1"], function () {
         Route::post('/get_user_by_name', [UserController::class, "getUserByName"]);
         Route::post('/output', [CodeController::class, "getOutput"]);
         Route::post('/save_file', [CodeController::class, "saveCode"]);
-        Route::get('/get_Files_Names', [CodeController::class, "getFilesNames"]);
+        Route::get('/get_files_names', [CodeController::class, "getFilesNames"]);
+        Route::get('/get_code_from_file_name', [CodeController::class, "getCodeFromFileName"]);
     });
-    Route::get('/listusers',[AdminController::class, "listUsers"]);
+    Route::get('/listusers', [AdminController::class, "listUsers"]);
     Route::post('/delete_user', [AdminController::class, "deleteUser"]);
-
-
 });
