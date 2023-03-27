@@ -2,24 +2,24 @@
  import Card from "../components/search_page/card"
  import Header from "../components/landing_page/header"
  import Footer from "../components/landing_page/footer"
- import React, {useState} from 'react'
-
+import React, {useState} from 'react'
 
 const SearchingPage = () => {
     const [name, setName] = useState("Hsein kteish");
     const [major, setMajor] = useState("Engineer");
-        
+    const [searchInput, setSearchInput] = useState("");
+
+    const handleChange = (e) => {
+        e.preventDefault();
+        setSearchInput(e.target.value);
+    };
+    
     return (
         <div>
             <Header/>
-            <SearchBar />
+            <SearchBar searchInput={searchInput} handleChange={handleChange}/>
             <div className="cards">
                 <Card name={name} major={major}/>
-                {/* <Card />
-                <Card />
-                <Card />
-                <Card />
-                <Card /> */}
             </div>
             <Footer/>
 
