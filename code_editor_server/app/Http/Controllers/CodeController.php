@@ -33,7 +33,14 @@ class CodeController extends Controller
 
         $file_name = $request->file_name;
         $code = $request->code;
-
+        $name = $username . '-' . $file_name . '.py';
         Storage::put('saved_files/' . $username . '-' . $file_name . '.py', $code);
+
+        return response()->json(
+            [
+                'status' => 'success'
+            ]
+
+        );
     }
 }
