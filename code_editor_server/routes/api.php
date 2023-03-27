@@ -33,6 +33,7 @@ Route::group(["prefix" => "v1"], function () {
         Route::post('/save_file', [CodeController::class, "saveCode"]);
         Route::get('/get_files_names', [CodeController::class, "getFilesNames"]);
         Route::post('/get_code_from_file_name', [CodeController::class, "getCodeFromFileName"]);
+        Route::post('/download_file', [CodeController::class, "downloadFile"]);
     });
     Route::group(['middleware' => 'admin.role', 'prefix' => 'admin'], function () {
         Route::get('/list_users', [AdminController::class, "listUsers"]);
