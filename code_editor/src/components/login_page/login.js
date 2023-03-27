@@ -35,8 +35,7 @@ const Login = ()=>{
           <label htmlFor="password">Password</label>
           <input type="password" id="password" placeholder="Enter your Password" ref={passwordRef}/>
           <button type="submit" className="login-button" id="login-button" onClick={saveToken} >Login</button>
-          <p className="forgot-password"><a href="#">Forgot your password?</a></p>
-          <p className="register-link">Not registered? <a href="register.html">Register as a new User</a></p>
+          <p className="register-link">Not registered? <a href="register">Register as a new User</a></p>
         </div>
       </div>
     </div>
