@@ -11,22 +11,21 @@ import MyFiles from "../components/coding_panel/my_files";
 import UseHttp from "../hooks/http-hook";
 import { useNavigate } from "react-router-dom";
 const CodingPage = () => {
-  const navigate = useNavigate()
+  const navigate = useNavigate();
   const [showFiles, setShowFiles] = useState(true);
   const [code, setCode] = useState("");
   const [file_name, setFileName] = useState("");
   const [isSaving, setIsSaving] = useState(false);
   const [output, setOutput] = useState("");
-  const [token,setToken] = useState(null)
-  useEffect(()=>{
+  const [token, setToken] = useState(null);
+  useEffect(() => {
     const myToken = localStorage.getItem("token");
     if (!myToken) {
-      navigate("/login")
+      navigate("/login");
+    } else {
+      setToken(myToken);
     }
-    else{
-      setToken(myToken)
-    }
-  },[])
+  }, []);
 
   const toggleShowMyFiles = () => {
     console.log(showFiles);
@@ -34,37 +33,37 @@ const CodingPage = () => {
   };
 
   const saveHandler = async () => {
-    // const formData = new FormData();
-    // formData.append("code", code);
-    // formData.append("file_name", file_name);
-    // console.log(file_name);
-    // const data = await UseHttp("save_file", "POST", formData, {
-    //   Authorization:
-    //     "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL3YxL2xvZ2luIiwiaWF0IjoxNjc5ODc4OTU4LCJleHAiOjE2Nzk4ODI1NTgsIm5iZiI6MTY3OTg3ODk1OCwianRpIjoiQmgwNm8zYXBhU0x3cFdmVSIsInN1YiI6IjEiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.VfGayW19C0oPuS6QQsu50WskTKAQowYhaAqdM2A1AWc",
-    // });
-    // setIsSaving(!isSaving);
-    // console.log(isSaving);
+    setIsSaving(!isSaving);
   };
   const runHandler = async () => {
-      const formData = new FormData();
+    const formData = new FormData();
     formData.append("code", code);
     const data = await UseHttp("output", "POST", formData, {
-      Authorization:
-        "Bearer"+ token,
+      Authorization: "Bearer" + token,
     });
     setOutput(data.output);
- 
   };
-  const savingclassNameHandler = (value) => {
-    setFileName(value);
+
+  const savingclassNameHandler = async (e) => {
+    const formData = new FormData();
+    formData.append("code", code);
+    formData.append("file_name", file_name);
+    console.log(file_name);
+    const data = await UseHttp("save_file", "POST", formData, {
+      Authorization: "Bearer" + token,
+    });
+    console.log(isSaving);
+    setFileName("");
     setIsSaving(false);
   };
+
   const codeHandler = (value) => {
     setCode(value);
   };
 
   const fileNameChangleHandler = (e) => {
     console.log(e.target.value);
+    setFileName(e.target.value);
   };
   return (
     <>
