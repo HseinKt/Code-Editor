@@ -15,10 +15,6 @@ const register = ()=>{
             </div>
           </div>
           <div>
-            <label htmlFor="email">Enter your Email</label>
-            <input id="email" placeholder="Email" />
-          </div>
-          <div>
             <label htmlFor="username">Choose a Username</label>
             <input id="username" placeholder="Username" />
           </div>
@@ -29,24 +25,20 @@ const register = ()=>{
           <div>
             <label htmlFor="confirm_password">Confirm your Password</label>
             <input id="confirm_password" type="password" placeholder="Confirm Password" />
-            </div>
-          <div>
-            <label htmlFor="birth_date">Date of Birth</label>
-            <input type="date" id="birth_date"/>
           </div>
           <div id="gender" className="gender">
             <div>
               <label htmlFor="male">Male</label>
-              <input type="radio" id="male" value="male" />
+              <input type="radio" id="male" value="male" name="gender"/>
             </div>
             <div>
             <label htmlFor="female">Female</label>
-            <input type="radio" id="female" value="female" />
+            <input type="radio" id="female" value="female" name="gender"/>
             </div>
           </div>
           <button type="submit" className="register-button" id="register-button">Register</button>
           <div className="register-link">
-            Already registered? <a href="">Login Now</a>
+            Already registered? <a href="/login">Login Now</a>
           </div>
         </div>
       </div>
