@@ -72,4 +72,24 @@ class CodeController extends Controller
 
         return response()->json(['fileUrls' => $fileUrls]);
     }
+
+    public function getCodeFromFileName(Request $request)
+    {
+        $id = Auth::id();
+        $username = User::where('id', $id)->value('username');
+        $name = $request->name;
+        $file_name = $username . '-' . $name . '.py';
+
+        $code = Storage::get('saved_codes/' . $file_name);
+
+        if ($code) {
+            $data = [
+                'file_name' => $file_name,
+                'code' => $code,
+            ];
+            return response()->json($data);
+        } else {
+            return response()->json(['error' => 'File not found'], 404);
+        }
+    }
 }
