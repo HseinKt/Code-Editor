@@ -30,6 +30,6 @@ Route::group(["prefix" => "v1"], function () {
         Route::post('/get_user_by_name', [UserController::class, "getUserByName"]);
         Route::post('/output', [CodeController::class, "getOutput"]);
         Route::post('/save_file', [CodeController::class, "saveCode"]);
-        Route::post('/getFilesNames', [CodeController::class, "getFilesNames"]);
+        Route::get('/getFilesNames', [CodeController::class, "getFilesNames"]);
     });
 });
