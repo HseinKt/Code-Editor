@@ -204,7 +204,8 @@ label {
 .register-form {
   margin-top: 10%;
 }
-.register-form input,.login-form input {
+.register-form input,
+.login-form input {
   display: block;
   width: 100%;
   padding: 10px;

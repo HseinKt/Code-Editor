@@ -72,4 +72,33 @@ class CodeController extends Controller
 
         return response()->json(['fileUrls' => $fileUrls]);
     }
+
+    public function getCodeFromFileName(Request $request)
+    {
+        $name = $request->name;
+
+        $code = Storage::get('saved_codes/' . $name);
+
+        if ($code) {
+            $data = [
+                'file_name' => $name,
+                'code' => $code,
+            ];
+            return response()->json($data);
+        } else {
+            return response()->json(['error' => 'File not found'], 404);
+        }
+    }
+
+
+    public function downloadFile($file_name)
+    {
+        $path = storage_path('app/saved_codes/' . $file_name);
+
+        if (!file_exists($path)) {
+            return response()->json(['message' => 'File not found.'], 404);
+        }
+
+        return Storage::download($path);
+    }
 }

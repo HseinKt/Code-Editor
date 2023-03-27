@@ -12,7 +12,7 @@ import UseHttp from "../hooks/http-hook";
 import { useNavigate } from "react-router-dom";
 const CodingPage = () => {
   const navigate = useNavigate();
-  const [showFiles, setShowFiles] = useState(true);
+  const [showFiles, setShowFiles] = useState(false);
   const [code, setCode] = useState("");
   const [file_name, setFileName] = useState("");
   const [isSaving, setIsSaving] = useState(false);
@@ -27,8 +27,18 @@ const CodingPage = () => {
     }
   }, []);
 
+  const getCode = async (name) => {
+    const token = localStorage.getItem("token");
+    const formData = new FormData();
+    formData.append("name", name);
+    const data = await UseHttp("get_code_from_file_name", "POST", formData, {
+      Authorization: "Bearer" + token,
+    });
+    setCode(data.code);
+    console.log(data);
+  };
+
   const toggleShowMyFiles = () => {
-    console.log(showFiles);
     setShowFiles(!showFiles);
   };
 
@@ -48,11 +58,9 @@ const CodingPage = () => {
     const formData = new FormData();
     formData.append("code", code);
     formData.append("file_name", file_name);
-    console.log(file_name);
     const data = await UseHttp("save_file", "POST", formData, {
       Authorization: "Bearer" + token,
     });
-    console.log(isSaving);
     setFileName("");
     setIsSaving(false);
   };
@@ -62,7 +70,6 @@ const CodingPage = () => {
   };
 
   const fileNameChangleHandler = (e) => {
-    console.log(e.target.value);
     setFileName(e.target.value);
   };
   return (
@@ -95,7 +102,7 @@ const CodingPage = () => {
         />
         <div className="console">
           {showFiles ? (
-            <MyFiles />
+            <MyFiles onClick={getCode} />
           ) : (
             <div>
               <label>
