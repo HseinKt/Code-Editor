@@ -75,17 +75,13 @@ class CodeController extends Controller
 
     public function getCodeFromFileName(Request $request)
     {
-        $id = Auth::id();
-        $username = User::where('id', $id)->value('username');
         $name = $request->name;
 
-        $file_name = $username . '-' . $name . '.py';
-        echo $file_name;
-        $code = Storage::get('saved_codes/' . $file_name);
+        $code = Storage::get('saved_codes/' . $name);
 
         if ($code) {
             $data = [
-                'file_name' => $file_name,
+                'file_name' => $name,
                 'code' => $code,
             ];
             return response()->json($data);
