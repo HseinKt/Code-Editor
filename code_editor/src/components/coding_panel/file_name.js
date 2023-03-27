@@ -1,4 +1,4 @@
 const FileName = (props) => {
-  return <p>{props.name}.py</p>;
+  return <p>{props.name}</p>;
 };
 export default FileName;
