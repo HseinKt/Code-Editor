@@ -33,8 +33,9 @@ Route::group(["prefix" => "v1"], function () {
         Route::post('/save_file', [CodeController::class, "saveCode"]);
         Route::get('/get_Files_Names', [CodeController::class, "getFilesNames"]);
     });
-    Route::get('/listusers',[AdminController::class, "listUsers"]);
-    Route::post('/delete_user', [AdminController::class, "deleteUser"]);
-
+    Route::group(['middleware' => 'admin.role' ,'prefix'=>'admin'], function () {
+        Route::get('/list_users',[AdminController::class, "listUsers"]);
+        Route::post('/delete_user', [AdminController::class, "deleteUser"]);
+    });
 
 });
