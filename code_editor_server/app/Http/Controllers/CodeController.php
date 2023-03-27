@@ -42,7 +42,7 @@ class CodeController extends Controller
             return response()->json(
                 [
                     'status' => 'failed',
-                    'error' => 'user_exits'
+                    'error' => 'file_name_exits'
                 ]
 
             );
