@@ -7,7 +7,7 @@ const Card = (props) => {
                 <div className="card_image"> </div>
                 <div className='details'>
                     <h4 className="name"><b>{props.name}</b></h4>
-                    <p className="major">{props.major}</p>
+                    <p className="major">{props.gender}</p>
                 </div>
             </div>
         </div>

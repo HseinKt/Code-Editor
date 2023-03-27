@@ -26,7 +26,11 @@ Route::group(["prefix" => "v1"], function () {
         Route::get('/get_all_users', [UserController::class, "getAllUsers"]);
         Route::post('/send_message', [UserController::class, "sendMessage"]);
         Route::post('/get_message', [UserController::class, "getMessages"]);
+        Route::post('/search_by_name', [UserController::class, "searchByName"]);
+        Route::post('/get_user_by_name', [UserController::class, "getUserByName"]); 
         Route::post('/output', [CodeController::class, "getOutput"]);
         Route::post('/save_file', [CodeController::class, "saveCode"]);
     });
 });
+
+
