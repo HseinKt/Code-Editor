@@ -5,16 +5,29 @@ import "ace-builds/src-noconflict/mode-python";
 // import "ace-builds/src-noconflict/theme-monokai";
 import "ace-builds/src-noconflict/theme-solarized_dark";
 // import "ace-builds/src-noconflict/theme-tomorrow_night_blue";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import CodingHeader from "../components/coding_panel/coding_header";
 import MyFiles from "../components/coding_panel/my_files";
 import UseHttp from "../hooks/http-hook";
+import { useNavigate } from "react-router-dom";
 const CodingPage = () => {
+  const navigate = useNavigate()
   const [showFiles, setShowFiles] = useState(true);
   const [code, setCode] = useState("");
   const [file_name, setFileName] = useState("");
   const [isSaving, setIsSaving] = useState(false);
   const [output, setOutput] = useState("");
+  const [token,setToken] = useState(null)
+  useEffect(()=>{
+    const myToken = localStorage.getItem("token");
+    if (!myToken) {
+      navigate("/login")
+    }
+    else{
+      setToken(myToken)
+    }
+  },[])
+
   const toggleShowMyFiles = () => {
     console.log(showFiles);
     setShowFiles(!showFiles);
@@ -33,13 +46,14 @@ const CodingPage = () => {
     // console.log(isSaving);
   };
   const runHandler = async () => {
-    const formData = new FormData();
+      const formData = new FormData();
     formData.append("code", code);
     const data = await UseHttp("output", "POST", formData, {
       Authorization:
-        "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL3YxL2xvZ2luIiwiaWF0IjoxNjc5ODY2MDA4LCJleHAiOjE2Nzk4Njk2MDgsIm5iZiI6MTY3OTg2NjAwOCwianRpIjoiZFE3V1ZtYVZOMmlVRkRCSiIsInN1YiI6IjEiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.LPon2xU2jxSioS1laBT8p9xrBhdWfQS0kgreudrk3jI",
+        "Bearer"+ token,
     });
     setOutput(data.output);
+ 
   };
   const savingclassNameHandler = (value) => {
     setFileName(value);
