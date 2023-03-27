@@ -10,15 +10,8 @@ use App\Models\Message;
 
 class UserController extends Controller
 {
-    public function __construct()
-    {
-        $this->middleware('auth:api', ['except' => ['getAllUsers', 'sendMessage','getMessages']]);
-    }
-
     public function getAllUsers () 
     {
-        // $auth = Auth::user();
-        // if ($auth)
         $users = User::all();
 
         return response()->json([
