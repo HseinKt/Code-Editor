@@ -78,8 +78,9 @@ class CodeController extends Controller
         $id = Auth::id();
         $username = User::where('id', $id)->value('username');
         $name = $request->name;
-        $file_name = $username . '-' . $name . '.py';
 
+        $file_name = $username . '-' . $name . '.py';
+        echo $file_name;
         $code = Storage::get('saved_codes/' . $file_name);
 
         if ($code) {
