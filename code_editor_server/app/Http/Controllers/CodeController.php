@@ -62,4 +62,14 @@ class CodeController extends Controller
 
         );
     }
+
+    public function getFilesNames()
+    {
+        $id = Auth::id();
+        $records = SavedCodes::where('user_id', $id)->get();
+
+        $fileUrls = $records->pluck('file_url');
+
+        return response()->json(['fileUrls' => $fileUrls]);
+    }
 }
