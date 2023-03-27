@@ -51,7 +51,7 @@ body {
 .card_image {
     height: 300px;
     width: 300px;
-    background-image: url('../images/card.jpg');
+    /* background-image: url('../images/card.jpg'); */
     background-position: center ;
     background-repeat: no-repeat;
     background-size: 270px 300px;

@@ -26,13 +26,14 @@ Route::group(["prefix" => "v1"], function () {
     Route::group(['middleware' => 'auth:api'], function () {
         Route::get('/get_all_users', [UserController::class, "getAllUsers"]);
         Route::post('/send_message', [UserController::class, "sendMessage"]);
-        Route::get('/get_message', [UserController::class, "getMessages"]);
+        Route::get('/get_message/{target_id}', [UserController::class, "getMessages"]);
         Route::post('/search_by_name', [UserController::class, "searchByName"]);
         Route::post('/get_user_by_name', [UserController::class, "getUserByName"]);
         Route::post('/output', [CodeController::class, "getOutput"]);
         Route::post('/save_file', [CodeController::class, "saveCode"]);
         Route::get('/get_files_names', [CodeController::class, "getFilesNames"]);
         Route::post('/get_code_from_file_name', [CodeController::class, "getCodeFromFileName"]);
+        Route::post('/download_file', [CodeController::class, "downloadFile"]);
     });
     Route::group(['middleware' => 'admin.role', 'prefix' => 'admin'], function () {
         Route::get('/list_users', [AdminController::class, "listUsers"]);
