@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\SavedCodes;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
@@ -35,6 +36,14 @@ class CodeController extends Controller
         $code = $request->code;
         $name = $username . '-' . $file_name . '.py';
         Storage::put('saved_files/' . $name, $code);
+        $save_code = new SavedCodes();
+        $save_code->user_id = $id;
+        $save_code->created_at = now()->format('d-m-y');
+        // $save_code->updated_at = now()->format('d-m-y');
+        $save_code->file_url = $name;
+
+        $save_code->save();
+
 
         return response()->json(
             [
