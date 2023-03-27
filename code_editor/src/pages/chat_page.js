@@ -3,7 +3,8 @@ import Chat from "../components/chat_page/chat"
 import ChatText from "../components/chat_page/chat_text"
 import "../index.css";
 
-import { useState } from "react";
+
+import { useEffect, useState } from "react";
 
 const ChatingPage = () => {
     const [messages, setMessages] = useState([]);
@@ -19,6 +20,8 @@ const ChatingPage = () => {
         setValue("");
     }
     console.log(messages);
+
+    
 
     return ( 
         <div>
