@@ -1,7 +1,24 @@
 import Tr from "../admin/tablerows";
+import UseHttp from "../../../../admin/src/hooks/http-hook";
+import {useEffect, useState} from 'react';
 
-const UsersTable = (props) => {
-  console.log(props.data)  
+const UsersTable = () => {
+  const token = localStorage.getItem('token');
+  const [data, setData]=useState('')
+  useEffect(()=>{
+    
+    const sendRequest = async ()=>{
+      const myData = await UseHttp(
+        "admin/list_users",
+        "GET","", {Authorization:'bearer' + token} 
+      );
+      setData(myData.users) 
+      // navigate("/login")
+    }
+    sendRequest()
+  },[]
+  
+  )
   
   return (
     <div className="table-container">
@@ -16,9 +33,9 @@ const UsersTable = (props) => {
           </tr>
         </thead>
         <tbody id="tbody">
-          {props.data.map(item =>
-            <Tr data = {item}/>
-          )}
+          {
+            !!data && data.map(item =><Tr data = {item}/>)
+          }
         </tbody>
       </table>
     </div>
