@@ -28,6 +28,7 @@ body {
     height: 40px;
     border-radius: 50px;
     border: 1px solid #030303;
+    text-align: center;
 }
 
 /* Chat Text */
