@@ -12,7 +12,7 @@ import UseHttp from "../hooks/http-hook";
 import { useNavigate } from "react-router-dom";
 const CodingPage = () => {
   const navigate = useNavigate();
-  const [showFiles, setShowFiles] = useState(true);
+  const [showFiles, setShowFiles] = useState(false);
   const [code, setCode] = useState("");
   const [file_name, setFileName] = useState("");
   const [isSaving, setIsSaving] = useState(false);
