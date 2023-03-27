@@ -9,7 +9,10 @@ class AdminController extends Controller
 {
     function listUsers(){
         $users = User::all("id","username","first_name","last_name","is_deleted");
-        return json_encode($users);
+        return response()->json([
+            "status"=> "successful",
+            'users'=>$users
+        ]);
     }
     function deleteUser(Request $request){
         $id = $request -> id;
