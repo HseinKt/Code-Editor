@@ -32,11 +32,6 @@ class UserController extends Controller
             'users' => $users,
         ]);
     }
-
-    public function getUserByName(Request $request)
-    {
-
-    }
     
     public function sendMessage(Request $request) 
     {
@@ -67,10 +62,23 @@ class UserController extends Controller
         }
     }
 
-    public function getMessages()
-    {
+    public function getMessages($target_id="")
+    {   
         $user = Auth::id();
-        $messages = Message::where('sender_id',$user)->get();
+        $messages = Message::where(function ($query) use ($user, $target_id) {
+            $query->where('sender_id',$user)
+                    ->where('target_id',$target_id);
+        })
+        ->orWhere(function ($query) use ($user, $target_id) {
+            $query->where('sender_id',$target_id)
+                    ->where('target_id',$user);
+        })
+        ->get();
+
+                
+        // $messages = Message::where('sender_id',$user)
+        //             ->where('target_id',$target_id)
+        //             ->get();
         
         return response()->json([
             'status' => 'success',
