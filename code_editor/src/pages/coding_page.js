@@ -12,6 +12,7 @@ import UseHttp from "../hooks/http-hook";
 const CodingPage = () => {
   const [showFiles, setShowFiles] = useState(true);
   const [code, setCode] = useState("");
+  const [file_name, setFileName] = useState("");
   const [isSaving, setIsSaving] = useState(false);
   const [output, setOutput] = useState("");
   const toggleShowMyFiles = () => {
@@ -19,25 +20,29 @@ const CodingPage = () => {
     setShowFiles(!showFiles);
   };
 
-  const saveHandler = () => {
+  const saveHandler = async () => {
+    const formData = new FormData();
+    formData.append("code", code);
+    formData.append("file_name", file_name);
+    console.log(file_name);
+    // const data = await UseHttp("save_file", "POST", formData, {
+    //   Authorization:
+    //     "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL3YxL2xvZ2luIiwiaWF0IjoxNjc5ODY5MDg2LCJleHAiOjE2Nzk4NzI2ODYsIm5iZiI6MTY3OTg2OTA4NiwianRpIjoiQmMzdG9KVHA3d3ZTZGZVVyIsInN1YiI6IjUiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.zXZCok0TRDj_T4Avceo423B6UPNPRy6kBZvRdR2OaK8",
+    // });
     setIsSaving(!isSaving);
     console.log(isSaving);
   };
   const runHandler = async () => {
     const formData = new FormData();
     formData.append("code", code);
-    const data = await UseHttp(
-      "output",
-      "POST",
-      formData,{
-        Authorization:"Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL3YxL2xvZ2luIiwiaWF0IjoxNjc5ODY2MDA4LCJleHAiOjE2Nzk4Njk2MDgsIm5iZiI6MTY3OTg2NjAwOCwianRpIjoiZFE3V1ZtYVZOMmlVRkRCSiIsInN1YiI6IjEiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.LPon2xU2jxSioS1laBT8p9xrBhdWfQS0kgreudrk3jI",
-      }
-      
-    );
+    const data = await UseHttp("output", "POST", formData, {
+      Authorization:
+        "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL3YxL2xvZ2luIiwiaWF0IjoxNjc5ODY2MDA4LCJleHAiOjE2Nzk4Njk2MDgsIm5iZiI6MTY3OTg2NjAwOCwianRpIjoiZFE3V1ZtYVZOMmlVRkRCSiIsInN1YiI6IjEiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.LPon2xU2jxSioS1laBT8p9xrBhdWfQS0kgreudrk3jI",
+    });
     setOutput(data.output);
   };
-  const savingclassNameHandler = () => {
-    console.log("savingclassNameHandler");
+  const savingclassNameHandler = (value) => {
+    setFileName(value);
     setIsSaving(false);
   };
   const codeHandler = (value) => {
