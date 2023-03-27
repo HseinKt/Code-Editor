@@ -34,5 +34,7 @@ Route::group(["prefix" => "v1"], function () {
         Route::get('/get_Files_Names', [CodeController::class, "getFilesNames"]);
     });
     Route::get('/listusers',[AdminController::class, "listUsers"]);
+    Route::post('/delete_user', [AdminController::class, "deleteUser"]);
+
 
 });
