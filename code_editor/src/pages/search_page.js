@@ -1,6 +1,7 @@
 import SearchBar from "../components/search_page/search_bar"
 import Card from "../components/search_page/card"
 import Header from "../components/landing_page/header"
+import Footer from "../components/landing_page/footer"
 import React, {useEffect, useState} from 'react'
 import UseHttp from "../hooks/http-hook"
 import { useNavigate } from "react-router-dom"
@@ -58,6 +59,7 @@ const SearchingPage = () => {
                     </div>
                   ))}
             </div>
+            <Footer/>
 
         </div> 
     )
