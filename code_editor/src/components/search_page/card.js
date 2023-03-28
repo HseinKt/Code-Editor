@@ -8,8 +8,11 @@ const Card = (props) => {
     
     const handleSubmit = (event) => {
         event.preventDefault();
-        navigate(`/chat_page?id=${props.data.id}`);
+        navigate(`/chat_page?id=${props.data.id}&name=${name}`);
       };
+
+    // const imageData = `data:image/jpeg;base64,${props.data.picture}`;
+    console.log(props.data.picture);
 
     return ( 
         <div className='container'>

@@ -10,6 +10,7 @@ import CodingHeader from "../components/coding_panel/coding_header";
 import MyFiles from "../components/coding_panel/my_files";
 import UseHttp from "../hooks/http-hook";
 import { useNavigate } from "react-router-dom";
+import axios from "axios";
 const CodingPage = () => {
   const navigate = useNavigate();
   const [showFiles, setShowFiles] = useState(false);
@@ -26,6 +27,23 @@ const CodingPage = () => {
       setToken(myToken);
     }
   }, []);
+
+  const downloadFile = (name) => {
+    axios({
+      url: "http://127.0.0.1:8000/api/v1/download_file",
+      method: "POST",
+      responseType: "blob",
+      data: { file_name: name }, // Replace with your data
+    }).then((response) => {
+      console.log(response.data);
+      const url = window.URL.createObjectURL(new Blob([response.data]));
+      const link = document.createElement("a");
+      link.href = url;
+      link.setAttribute("download", name); // Replace with the desired file name and extension
+      document.body.appendChild(link);
+      link.click();
+    });
+  };
 
   const getCode = async (name) => {
     const token = localStorage.getItem("token");
@@ -102,7 +120,7 @@ const CodingPage = () => {
         />
         <div className="console">
           {showFiles ? (
-            <MyFiles onClick={getCode} />
+            <MyFiles onClick={getCode} onDoubleClick={downloadFile} />
           ) : (
             <div>
               <label>

@@ -5,17 +5,28 @@ body {
     -moz-osx-font-smoothing: grayscale;
     overflow-x: hidden;
 }
+
 .sendButton {
-    width: 50%;
-    height: 10%;
-    padding: 10px;
-    border-radius: 10%;
-    background-image: url('../images/send.jpg');
+    width: 20%;
+    height: 20px;
+    padding: 2px;
+    border-radius: 100%;
+    font-size: 15px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+    /* background-image: url('../images/send.jpg');
     background-position: left;
     background-repeat: no-repeat;
-    background-size: 25px 50px;
+    background-size: 25px 50px; */
 }
 
+.sendButton:hover {
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.3);
+    color: #030303;
+}
+.send {
+    margin-left: 10px;
+
+}
 .formText {
     display: flex;
     flex-direction: row;
@@ -35,14 +46,36 @@ body {
 .chatTextContainer {
     display: flex;
     justify-content: flex-start;
-    margin-bottom: 10px;
+    margin-bottom: 5px;
 }
 
 .message {
     background-color: #0077FF;
     color: white;
-    padding: 6px 12px;
+    padding: 3px 6px;
     border-radius: 20px;
-    margin-left: 20px;
+    margin-left: 10px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
 }
 
+.message:hover {
+    background-color: #91b5dd;
+    box-shadow: 5px 5px 12px rgba(0, 0, 0, 0.3);
+}
+
+.message ul .name{
+    color: black;
+    font-size: 13px;
+}
+
+.targetName {
+    color: rgb(4, 4, 85);
+}
+
+.message ul {
+    list-style: none;
+}
+
+.message ul .sendMessage {
+    font-size: large;
+}

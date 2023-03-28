@@ -6,16 +6,14 @@ import UseHttp from "../hooks/http-hook"
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-
 const ChatingPage = () => {
     const [messages, setMessages] = useState([]);
     const [value, setValue] = useState("");
     const [token, setToken] = useState("");
     const params = new URLSearchParams(window.location.search);
     const target_id = params.get('id');
+    const target_name = params.get('name');
     const navigate = useNavigate();
-    
-    // console.log("target id = "+target_id);
     
     const handleValue = (e) => {
         setValue(e.target.value)
@@ -38,8 +36,6 @@ const ChatingPage = () => {
         setValue("");
     }
 
-    // console.log("message 2"+messages);
-
     useEffect(() => {
         //get the token
         const myToken = localStorage.getItem("token");
@@ -54,15 +50,12 @@ const ChatingPage = () => {
                     Authorization:
                     "Bearer "+myToken,
                 });
-                // console.log("data 1 from get message : Inside fetch data"+data.data);
-
                 setMessages(data.users);
             } catch (error) {
                 console.log("ERROR:::"+error);
             }
         }
         fetchData();
-        // console.log("messages 1 after get message api : outside fetch data"+messages);
     }, []);
 
     return ( 
@@ -71,9 +64,11 @@ const ChatingPage = () => {
             <Chat value={value} handleValue={handleValue} handleMessageSend={handleMessageSend}/>
 
             <div className="ChatBox">
-                
                 {!!messages && messages.map((message,index) => (
-                    <ChatText key={index} message={message.message_body}/>
+                    <ChatText key={index} 
+                            message={message.message_body} 
+                            target_name={target_name}
+                            />
                 ))}
             </div>
         </div>
