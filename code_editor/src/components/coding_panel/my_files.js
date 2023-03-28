@@ -22,7 +22,12 @@ const MyFiles = (props) => {
       <h4>My files</h4>
       <hr></hr>
       {data.map((item) => (
-        <FileName key={item.id} name={item} onClick={props.onClick} />
+        <FileName
+          key={item.id}
+          name={item}
+          onClick={props.onClick}
+          onDoubleClick={props.onDoubleClick}
+        />
       ))}
     </div>
   );

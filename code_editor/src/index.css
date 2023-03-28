@@ -80,7 +80,9 @@ label {
   border-radius: 5px;
   cursor: pointer;
 }
-
+.header > div > button>a{
+  text-decoration: none;
+}
 .login {
   color: var(--light_blue);
   background-color: var(--cyan);
@@ -137,7 +139,7 @@ label {
   line-height: 1.5;
   margin-bottom: 2rem;
 }
-.landing_row a {
+.landing_row button {
   background-color: var(--dark_blue);
   color: white;
   border: none;

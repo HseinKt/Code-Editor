@@ -1,7 +1,20 @@
 import Compilerimage from "../images/compiler.png";
 import Serverimage from "../images/servers.png";
+import { useNavigate } from "react-router-dom";
 
-const landing_body = () => {
+const useRedirect = () => {
+  const navigate = useNavigate();
+  const redirect = (path) => {
+    navigate('../'+path);
+  };
+  return redirect;
+};
+
+
+const Landing_body = () => {
+  const redirect = useRedirect();
+
+
   return (
     <div className="landing_body">
       <div className="landing_row">
@@ -13,7 +26,7 @@ const landing_body = () => {
             Codeit is the best tool for starting, sharing, and developing
             projects in Python programming language, right from your browser.
           </p>
-          <a href="../coding_page">Start Coding</a>
+          <button  onClick={()=>redirect("coding_page")}>Start Coding</button>
         </div>
         <div>
           <img src={Compilerimage} height="400px" />
@@ -38,4 +51,4 @@ const landing_body = () => {
     </div>
   );
 };
-export default landing_body;
+export default Landing_body;
