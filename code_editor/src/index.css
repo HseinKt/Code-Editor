@@ -73,7 +73,7 @@ label {
   align-items: center;
 }
 .header > div > button {
-  font-size: 20px;
+  font-size: 1.2rem;
   padding: 5px;
   margin: 5px;
   border: 1px solid black;
@@ -92,13 +92,17 @@ label {
   color: black;
   background-color: var(--light_blue);
 }
+.logout{
+  color: black;
+  background-color: var(--light_blue);
+}
 .login:hover {
   color: black;
   background-color: var(--light_blue);
 }
-.register:hover {
+.logout:hover, .register:hover {
   color: var(--light_blue);
-  background-color: var(--cyan);
+  background-color: var(--dark_blue);
 }
 .login:active,
 .register:active {
@@ -139,6 +143,11 @@ label {
   font-size: 1.2rem;
   line-height: 1.5;
   margin-bottom: 2rem;
+}
+.lanbuttons{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 .landing_row button {
   background-color: var(--dark_blue);

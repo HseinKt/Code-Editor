@@ -7,10 +7,7 @@ import { useNavigate } from "react-router-dom"
 import "../index.css";
 
 const SearchingPage = () => {
-<<<<<<< HEAD
     const [images, setImages] = useState([]);
-=======
->>>>>>> a502af17b2d9d046da60ed9365dc01f49fee21ae
     const [results, setResults] = useState([]);
     const [searchInput, setSearchInput] = useState("");
     const [token, setToken] = useState("");

@@ -24,7 +24,10 @@ const Landing_body = () => {
             Codeit is the best tool for starting, sharing, and developing
             projects in Python programming language, right from your browser.
           </p>
+          <div className="lanbuttons">
           <button  onClick={()=>redirect("coding_page")}>Start Coding</button>
+          <button onClick={()=>redirect("search_page")}>Search Members</button>
+          </div>
         </div>
         <div>
           <img src={Compilerimage} height="400px" />
