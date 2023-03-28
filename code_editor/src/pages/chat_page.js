@@ -67,8 +67,7 @@ const ChatingPage = () => {
                 {!!messages && messages.map((message,index) => (
                     <ChatText key={index} 
                             message={message.message_body} 
-                            target_name={target_name}
-                            />
+                            target_name={target_name}/>
                 ))}
             </div>
         </div>
