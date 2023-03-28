@@ -46,3 +46,6 @@ body {
     margin-left: 20px;
 }
 
+.message ul .name{
+    color: green;
+}

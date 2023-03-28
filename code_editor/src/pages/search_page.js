@@ -5,6 +5,7 @@ import Footer from "../components/landing_page/footer"
 import React, {useEffect, useState} from 'react'
 import UseHttp from "../hooks/http-hook"
 import { useNavigate } from "react-router-dom"
+import "../index.css";
 
 const SearchingPage = () => {
     // const [name, setName] = useState("Hsein kteish");
@@ -24,7 +25,6 @@ const SearchingPage = () => {
           setToken(myToken)
         }
     },[])
-    console.log("token : "+token);
 
     const handleChange = (e) => {
         e.preventDefault();
@@ -54,7 +54,7 @@ const SearchingPage = () => {
                     <Card data={user}/>
                 ))}
             </div>
-            <Footer/>
+
         </div> 
     )
 }

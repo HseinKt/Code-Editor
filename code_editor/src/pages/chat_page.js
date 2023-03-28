@@ -14,9 +14,7 @@ const ChatingPage = () => {
     const params = new URLSearchParams(window.location.search);
     const target_id = params.get('id');
     const navigate = useNavigate();
-    
-    // console.log("target id = "+target_id);
-    
+        
     const handleValue = (e) => {
         setValue(e.target.value)
     }
@@ -38,8 +36,6 @@ const ChatingPage = () => {
         setValue("");
     }
 
-    // console.log("message 2"+messages);
-
     useEffect(() => {
         //get the token
         const myToken = localStorage.getItem("token");
@@ -54,7 +50,6 @@ const ChatingPage = () => {
                     Authorization:
                     "Bearer "+myToken,
                 });
-                // console.log("data 1 from get message : Inside fetch data"+data.data);
 
                 setMessages(data.users);
             } catch (error) {
@@ -62,7 +57,6 @@ const ChatingPage = () => {
             }
         }
         fetchData();
-        // console.log("messages 1 after get message api : outside fetch data"+messages);
     }, []);
 
     return ( 
@@ -73,7 +67,11 @@ const ChatingPage = () => {
             <div className="ChatBox">
                 
                 {!!messages && messages.map((message,index) => (
-                    <ChatText key={index} message={message.message_body}/>
+                    <ChatText key={index} 
+                            message={message.message_body} 
+                            sender_id={message.sender_id}
+                            target_id={message.target_id}
+                            />
                 ))}
             </div>
         </div>
