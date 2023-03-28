@@ -44,11 +44,12 @@ const Landing_body = () => {
       <div className="landing_row">
         <div>
           <img
+          className="m-right"
             src={Serverimage}
             height="400px"
           />
         </div>
-        <div>
+        <div style={{marginLeft:"1rem"}}>
           <h2>
             Compile your code faster than ever with our high-speed servers
           </h2>
