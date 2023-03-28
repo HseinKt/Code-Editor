@@ -34,9 +34,10 @@ class UserController extends Controller
         ]);
     }
 
-    public function getUserByID(Request $request)
+    public function getUserByID()
     {
-        $users = User::where('id',$request->id)->get();
+        $user = Auth::id();
+        $users = User::where('id',$user)->get();
         
         return response()->json([
             'status' => 'success',
@@ -51,6 +52,8 @@ class UserController extends Controller
         $target_id = $request->target_id;
         $body = $request->message_body;
 
+        $user = User::where('id',$sender_id)->get();
+        
         if ($sender_id != $target_id) {
             $message = Message::create([
                 'message_body' => $body,
@@ -62,6 +65,7 @@ class UserController extends Controller
                 'status' => 'success',
                 'message' => 'message sent',
                 'users' => $message,
+                'user' =>$user,
             ]);
         } else {
             return response()->json([
@@ -73,7 +77,9 @@ class UserController extends Controller
 
     public function getMessages($target_id="")
     {   
-        $user = Auth::id();        
+        $user = Auth::id();
+        $u = User::where('id',$user)->get();
+   
         $messages = Message::where(function ($query) use ($user, $target_id) {
             $query->where('sender_id',$user)
                     ->where('target_id',$target_id);
@@ -88,6 +94,7 @@ class UserController extends Controller
             'status' => 'success',
             'message' => 'messages founded',
             'users' => $messages,
+            'user' => $u,
         ]);
     }
 }

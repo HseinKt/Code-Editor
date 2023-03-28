@@ -10,8 +10,8 @@ const Chat = (props) => {
                     value={props.value} 
                     onChange={props.handleValue}
                 />
-                <button type="submit">
-                    <div className="sendButton"></div>
+                <button type="submit" className="send">
+                    <div className="sendButton"><i>SEND</i></div>
                 </button>
             </form>
         </div>

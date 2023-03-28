@@ -30,7 +30,7 @@ Route::group(["prefix" => "v1"], function () {
         Route::get('/get_message/{target_id}', [UserController::class, "getMessages"]);
         Route::post('/search_by_name', [UserController::class, "searchByName"]);
         Route::post('/get_user_by_name', [UserController::class, "getUserByName"]);
-        Route::post('/get_user_by_id', [UserController::class, "getUserByID"]);
+        Route::get('/get_user_by_id', [UserController::class, "getUserByID"]);
 
         Route::post('/output', [CodeController::class, "getOutput"]);
         Route::post('/save_file', [CodeController::class, "saveCode"]);

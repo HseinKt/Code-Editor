@@ -6,15 +6,15 @@ import UseHttp from "../hooks/http-hook"
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-
 const ChatingPage = () => {
     const [messages, setMessages] = useState([]);
     const [value, setValue] = useState("");
     const [token, setToken] = useState("");
     const params = new URLSearchParams(window.location.search);
     const target_id = params.get('id');
+    const target_name = params.get('name');
     const navigate = useNavigate();
-        
+    
     const handleValue = (e) => {
         setValue(e.target.value)
     }
@@ -50,7 +50,6 @@ const ChatingPage = () => {
                     Authorization:
                     "Bearer "+myToken,
                 });
-
                 setMessages(data.users);
             } catch (error) {
                 console.log("ERROR:::"+error);
@@ -65,12 +64,10 @@ const ChatingPage = () => {
             <Chat value={value} handleValue={handleValue} handleMessageSend={handleMessageSend}/>
 
             <div className="ChatBox">
-                
                 {!!messages && messages.map((message,index) => (
                     <ChatText key={index} 
                             message={message.message_body} 
-                            sender_id={message.sender_id}
-                            target_id={message.target_id}
+                            target_name={target_name}
                             />
                 ))}
             </div>

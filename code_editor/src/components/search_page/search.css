@@ -51,13 +51,24 @@ body {
 .card_image {
     height: 300px;
     width: 300px;
-    /* background-image: url('../images/card.jpg'); */
+    background-image: url('../images/card.jpg');
     background-position: center ;
     background-repeat: no-repeat;
     background-size: 270px 300px;
+    margin-right: 10px;
 }
 
 .details {
     padding: 2px 16px;
 }
 
+.btn {
+    background-color: #47B5FF;
+    border-radius: 20px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.btn:hover {
+    background-color: #0087e0;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.3);
+}
