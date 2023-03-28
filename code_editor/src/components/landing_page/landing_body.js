@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 const useRedirect = () => {
   const navigate = useNavigate();
   const redirect = (path) => {
-    navigate('../'+path);
+    navigate("../" + path);
   };
   return redirect;
 };
@@ -25,17 +25,28 @@ const Landing_body = () => {
             projects in Python programming language, right from your browser.
           </p>
           <div className="lanbuttons">
-          <button  onClick={()=>redirect("coding_page")}>Start Coding</button>
-          <button onClick={()=>redirect("search_page")}>Search Members</button>
+            <button onClick={() => redirect("coding_page")}>
+              Start Coding
+            </button>
+            <button onClick={() => redirect("search_page")}>
+              Search Members
+            </button>
           </div>
         </div>
         <div>
-          <img src={Compilerimage} height="400px" />
+          <img
+            style={{ marginLeft: "2rem" }}
+            src={Compilerimage}
+            height="400px"
+          />
         </div>
       </div>
       <div className="landing_row">
         <div>
-          <img src={Serverimage} height="400px" />
+          <img
+            src={Serverimage}
+            height="400px"
+          />
         </div>
         <div>
           <h2>

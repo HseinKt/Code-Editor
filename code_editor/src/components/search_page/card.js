@@ -8,7 +8,7 @@ const Card = (props) => {
     
     const handleSubmit = (event) => {
         event.preventDefault();
-        navigate(`/chat_page?id=${props.data.id}&name=${name}`);
+        navigate(`/chat_page?id=${props.data.id}&name=${props.data.username}`);
       };
 
     // const imageData = `data:image/jpeg;base64,${props.data.picture}`;
