@@ -22,7 +22,7 @@ const Login = ()=>{
       );
       if(data.user) {
         localStorage.setItem('token', data.token);
-        navigate("/")
+        navigate("/admin_panel")
       }
   };
     
