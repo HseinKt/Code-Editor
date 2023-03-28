@@ -81,4 +81,7 @@ class UserController extends Controller
             'users' => $messages,
         ]);
     }
+    // public function getPicture(){
+
+    // }
 }

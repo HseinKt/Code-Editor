@@ -7,11 +7,9 @@ import UseHttp from "../hooks/http-hook"
 import { useNavigate } from "react-router-dom"
 
 const SearchingPage = () => {
-    // const [name, setName] = useState("Hsein kteish");
-    // const [gender, setGender] = useState("Engineer");
+    const [images, setImages] = useState([]);
     const [results, setResults] = useState([]);
     const [searchInput, setSearchInput] = useState("");
-    // const [loading, setLoading] = useState(false);
     const [token, setToken] = useState("");
 
     const navigate = useNavigate();
@@ -24,7 +22,6 @@ const SearchingPage = () => {
           setToken(myToken)
         }
     },[])
-    console.log("token : "+token);
 
     const handleChange = (e) => {
         e.preventDefault();
@@ -41,18 +38,25 @@ const SearchingPage = () => {
         });
 
         setResults(data.users);
-        console.log(data.users);
         setSearchInput("");
-    }
 
+        const images= data.users.map(user => {
+            const decodedImage = atob(user.picture);
+            const new_text = decodedImage.replace('/public/','/storage/')
+            return new_text;    
+        });
+        setImages(images);      
+    }
     return (
         <div>
             <Header/>
             <SearchBar searchInput={searchInput} handleChange={handleChange} runHandler={runHandler}/>
             <div className="cards">
-                {results.map((user) => (
-                    <Card data={user}/>
-                ))}
+                {results.map((user, index) => (
+                    <div>
+                      <Card data={user} image={images[index]} />
+                    </div>
+                  ))}
             </div>
             <Footer/>
         </div> 

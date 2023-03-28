@@ -10,10 +10,8 @@ const useRedirect = () => {
   return redirect;
 };
 
-
 const Landing_body = () => {
   const redirect = useRedirect();
-
 
   return (
     <div className="landing_body">
