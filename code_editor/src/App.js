@@ -6,6 +6,7 @@ import SearchingPage from "./pages/search_page";
 import ChatingPage from "./pages/chat_page";
 import Register from "./components/register_page/register";
 import Login from "./components/login_page/login";
+import NotFound from "./components/not_found/not_found";
 
 
 function App() {
@@ -20,6 +21,7 @@ function App() {
         <Route path="/login" element={<Login/>} />
         
         <Route path="/" element={<LandingPage />} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
     </>
   );
