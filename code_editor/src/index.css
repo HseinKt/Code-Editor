@@ -357,4 +357,12 @@ label {
   }
 }
 
+@media (max-width:450px) {
+    .landing_body{
+      padding: 0;
+    }
+    .landing_row{
+      padding: 0;
+    }
+}
 /* Type your styling codes above media queries please */
