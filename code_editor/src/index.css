@@ -21,6 +21,10 @@ a {
   color: #ffffff;
   margin: 2%;
 }
+a:hover{
+  text-decoration: none;
+  color: purple;
+}
 
 label {
   display: block;
@@ -267,7 +271,7 @@ label {
   font-weight: bold;
   cursor: pointer;
 }
-.register-button:hover {
+.login-button:hover, .register-button:hover {
   background-color: var(--light_blue);
   color: black;
 }

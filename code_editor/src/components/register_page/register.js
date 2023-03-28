@@ -41,7 +41,8 @@ const Register = ()=>{
       "POST",
       formData
     );
-    navigate("/login")
+    if(data.success)
+      navigate("/login")
     };
     
       

@@ -20,9 +20,12 @@ const Login = ()=>{
         "POST",
         formData
       );
-      localStorage.setItem('token', data.token);
-      navigate("/admin_panel")
-    };
+      if(data.user) {
+        localStorage.setItem('token', data.token);
+        navigate("/")
+      }
+  };
+    
     
 
   return(
